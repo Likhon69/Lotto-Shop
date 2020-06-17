@@ -1,0 +1,11 @@
+D:\LottoShop\DbContext\bin\Debug\netcoreapp3.1\DbContext.deps.json
+D:\LottoShop\DbContext\bin\Debug\netcoreapp3.1\DbContext.dll
+D:\LottoShop\DbContext\bin\Debug\netcoreapp3.1\DbContext.pdb
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.csprojAssemblyReference.cache
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.AssemblyInfoInputs.cache
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.AssemblyInfo.cs
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.dll
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.pdb
+D:\LottoShop\DbContext\bin\Debug\netcoreapp3.1\ShopModels.dll
+D:\LottoShop\DbContext\bin\Debug\netcoreapp3.1\ShopModels.pdb
+D:\LottoShop\DbContext\obj\Debug\netcoreapp3.1\DbContext.csproj.CopyComplete

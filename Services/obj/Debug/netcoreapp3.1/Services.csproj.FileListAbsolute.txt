@@ -1,0 +1,8 @@
+D:\LottoShop\Services\bin\Debug\netcoreapp3.1\Services.deps.json
+D:\LottoShop\Services\bin\Debug\netcoreapp3.1\Services.dll
+D:\LottoShop\Services\bin\Debug\netcoreapp3.1\Services.pdb
+D:\LottoShop\Services\obj\Debug\netcoreapp3.1\Services.csprojAssemblyReference.cache
+D:\LottoShop\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfoInputs.cache
+D:\LottoShop\Services\obj\Debug\netcoreapp3.1\Services.AssemblyInfo.cs
+D:\LottoShop\Services\obj\Debug\netcoreapp3.1\Services.dll
+D:\LottoShop\Services\obj\Debug\netcoreapp3.1\Services.pdb
