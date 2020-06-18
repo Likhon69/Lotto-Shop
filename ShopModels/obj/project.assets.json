@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
+      "projectUniqueName": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
       "projectName": "ShopModels",
-      "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
+      "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\LottoShop\\ShopModels\\obj\\",
+      "outputPath": "E:\\Project\\LottoShop\\ShopModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

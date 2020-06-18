@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LottoShop\\DbContext\\DbContext.csproj": {}
+    "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj": {}
   },
   "projects": {
-    "D:\\LottoShop\\DbContext\\DbContext.csproj": {
+    "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LottoShop\\DbContext\\DbContext.csproj",
+        "projectUniqueName": "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj",
         "projectName": "DbContext",
-        "projectPath": "D:\\LottoShop\\DbContext\\DbContext.csproj",
+        "projectPath": "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\LottoShop\\DbContext\\obj\\",
+        "outputPath": "E:\\Project\\LottoShop\\DbContext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
-                "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj"
+              "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
+                "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj"
               }
             }
           }
@@ -71,14 +71,14 @@
         }
       }
     },
-    "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
+    "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
+        "projectUniqueName": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
         "projectName": "ShopModels",
-        "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
+        "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\LottoShop\\ShopModels\\obj\\",
+        "outputPath": "E:\\Project\\LottoShop\\ShopModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

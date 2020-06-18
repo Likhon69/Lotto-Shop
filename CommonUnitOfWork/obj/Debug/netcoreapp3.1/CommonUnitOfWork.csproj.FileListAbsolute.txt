@@ -1,0 +1,13 @@
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\CommonUnitOfWork.deps.json
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\CommonUnitOfWork.dll
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\CommonUnitOfWork.pdb
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.csprojAssemblyReference.cache
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.AssemblyInfoInputs.cache
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.AssemblyInfo.cs
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.dll
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.pdb
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\Repository.dll
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\ShopModels.dll
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\CommonUnitOfWork\bin\Debug\netcoreapp3.1\ShopModels.pdb
+E:\Project\LottoShop\CommonUnitOfWork\obj\Debug\netcoreapp3.1\CommonUnitOfWork.csproj.CopyComplete

@@ -16,5 +16,24 @@ namespace E_CommerceApp.Data
         }
 
         public DbSet<Shoe> Shoes { get; set; }
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Write Fluent API configurations here
+
+            //Property Configurations
+            modelBuilder.Entity<Category>()
+                    .HasKey(c => c.C_Id);
+            modelBuilder.Entity<Category>()
+                        .Property(c => c.description)
+                        .IsRequired();
+            modelBuilder.Entity<Category>()
+                        .Property(c => c.shortName)
+                        .IsRequired();
+           
+                    
+        }
     }
 }

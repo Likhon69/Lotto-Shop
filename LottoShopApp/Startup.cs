@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using CommonUnitOfWork;
 using E_CommerceApp.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +17,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Repository.Contracts;
+using Repository.Implementation;
+using Services.Contracts;
+using Services.Implementation;
 
 namespace E_CommerceApp
 {
@@ -60,7 +65,10 @@ namespace E_CommerceApp
                 
 
             });
-           
+
+            services.AddScoped<IUnitOfWork, UnitofWork>();
+            services.AddTransient<IShoePost, ShoePost>();
+            services.AddTransient<IPostDataServices, PostDataServices>();
             services.AddAutoMapper(typeof(Startup));
         }
 

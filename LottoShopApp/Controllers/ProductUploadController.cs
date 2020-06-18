@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Repository.Contracts;
+using Services.Contracts;
 using ShopModels.Models;
 using ShopModels.ViewModel;
 
@@ -24,11 +26,13 @@ namespace E_CommerceApp.Controllers
         private readonly IWebHostEnvironment _env;
         private readonly DatabaseContext _db;
         private readonly IMapper _mapper;
-        public ProductUploadController(IWebHostEnvironment env, DatabaseContext db, IMapper mapper)
+        private readonly IPostDataServices _postDataServices;
+        public ProductUploadController(IWebHostEnvironment env, DatabaseContext db, IMapper mapper, IPostDataServices postDataServices)
         {
             _env = env;
             _db = db;
             _mapper = mapper;
+            _postDataServices = postDataServices;
         }
 
         [HttpGet]
@@ -81,32 +85,10 @@ namespace E_CommerceApp.Controllers
         [HttpPost]
         public IActionResult PostData(ProductDto model)
         {
-            var product = _mapper.Map<Shoe>(model);
-
-            string finalImage = "";
-            int pos = model.ProductImage.IndexOf("d");
-            if (pos >= 0)
-            {
-                // String after founder  
-                string afterFounder = model.ProductImage.Remove(pos);
-                Console.WriteLine(afterFounder);
-                // Remove everything before founder but include founder  
-                string beforeFounder = model.ProductImage.Remove(0, pos);
-                finalImage = beforeFounder;
+            var data = _postDataServices.PostData(model);
 
 
-            }
-
-
-            if (ModelState.IsValid)
-            {
-                product.ProductImage = finalImage;
-                _db.Shoes.Add(product);
-                _db.SaveChanges();
-            }
-
-
-            return Ok();
+            return Ok(data);
         }
         [HttpGet]
         public IActionResult GetAll()

@@ -5,3 +5,14 @@ D:\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.ca
 D:\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
 D:\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.dll
 D:\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\Repository\bin\Debug\netcoreapp3.1\Repository.deps.json
+E:\Project\LottoShop\Repository\bin\Debug\netcoreapp3.1\Repository.dll
+E:\Project\LottoShop\Repository\bin\Debug\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.csprojAssemblyReference.cache
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfoInputs.cache
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.AssemblyInfo.cs
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.dll
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\Repository\bin\Debug\netcoreapp3.1\ShopModels.dll
+E:\Project\LottoShop\Repository\bin\Debug\netcoreapp3.1\ShopModels.pdb
+E:\Project\LottoShop\Repository\obj\Debug\netcoreapp3.1\Repository.csproj.CopyComplete

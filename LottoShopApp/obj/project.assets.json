@@ -2610,6 +2610,20 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "CommonUnitOfWork/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CommonUnitOfWork.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonUnitOfWork.dll": {}
+        }
+      },
       "DbContext/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -2622,6 +2636,35 @@
         },
         "runtime": {
           "bin/placeholder/DbContext.dll": {}
+        }
+      },
+      "Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.1",
+          "ShopModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repository.dll": {}
+        }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "CommonUnitOfWork": "1.0.0",
+          "ShopModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
         }
       },
       "ShopModels/1.0.0": {
@@ -8406,10 +8449,25 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "CommonUnitOfWork/1.0.0": {
+      "type": "project",
+      "path": "../CommonUnitOfWork/CommonUnitOfWork.csproj",
+      "msbuildProject": "../CommonUnitOfWork/CommonUnitOfWork.csproj"
+    },
     "DbContext/1.0.0": {
       "type": "project",
       "path": "../DbContext/DbContext.csproj",
       "msbuildProject": "../DbContext/DbContext.csproj"
+    },
+    "Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Repository.csproj",
+      "msbuildProject": "../Repository/Repository.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     },
     "ShopModels/1.0.0": {
       "type": "project",
@@ -8427,6 +8485,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.1",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.3",
+      "Repository >= 1.0.0",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 5.4.1"
     ]
   },
@@ -8438,11 +8498,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\LottoShop\\LottoShopApp\\LottoShopApp.csproj",
+      "projectUniqueName": "E:\\Project\\LottoShop\\LottoShopApp\\LottoShopApp.csproj",
       "projectName": "LottoShopApp",
-      "projectPath": "D:\\LottoShop\\LottoShopApp\\LottoShopApp.csproj",
+      "projectPath": "E:\\Project\\LottoShop\\LottoShopApp\\LottoShopApp.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\LottoShop\\LottoShopApp\\obj\\",
+      "outputPath": "E:\\Project\\LottoShop\\LottoShopApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -8463,8 +8523,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\LottoShop\\DbContext\\DbContext.csproj": {
-              "projectPath": "D:\\LottoShop\\DbContext\\DbContext.csproj"
+            "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj": {
+              "projectPath": "E:\\Project\\LottoShop\\DbContext\\DbContext.csproj"
+            },
+            "E:\\Project\\LottoShop\\Repository\\Repository.csproj": {
+              "projectPath": "E:\\Project\\LottoShop\\Repository\\Repository.csproj"
+            },
+            "E:\\Project\\LottoShop\\Services\\Services.csproj": {
+              "projectPath": "E:\\Project\\LottoShop\\Services\\Services.csproj"
             }
           }
         }
