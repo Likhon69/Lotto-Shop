@@ -13,8 +13,8 @@ namespace E_CommerceApp.Configuration
     {
         public AutoMapping()
         {
-            CreateMap<Shoe, ProductDto>();
-            CreateMap<ProductDto, Shoe>();
+        /*    CreateMap<Shoe, ProductDto>();
+            CreateMap<ProductDto, Shoe>();*/
         }
     }
 }

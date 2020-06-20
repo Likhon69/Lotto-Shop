@@ -269,9 +269,7 @@ E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\runtimes\win-x86\nativ
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\DbContext.dll
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\ShopModels.dll
-E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\DbContext.pdb
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\ShopModels.pdb
 E:\Project\LottoShop\LottoShopApp\obj\Debug\netcoreapp3.1\LottoShopApp.csprojAssemblyReference.cache
 E:\Project\LottoShop\LottoShopApp\obj\Debug\netcoreapp3.1\staticwebassets\LottoShopApp.StaticWebAssets.Manifest.cache
@@ -304,3 +302,14 @@ E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Services.dll
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Repository.pdb
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Services.pdb
 E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\CommonUnitOfWork.pdb
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\ECommerceDbContext.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\ECommerceDbContext.pdb
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\UserManagement.dll
+E:\Project\LottoShop\LottoShopApp\bin\Debug\netcoreapp3.1\UserManagement.pdb

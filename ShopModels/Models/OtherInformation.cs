@@ -6,7 +6,7 @@ namespace ShopModels.Models
 {
     public class OtherInformation
     {
-        public int Id { get; set; }
+        public int Oth_Id { get; set; }
         public string RptCategory { get; set; }
         public string RptSubCategory { get; set; }
     }

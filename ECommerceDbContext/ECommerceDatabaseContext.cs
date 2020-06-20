@@ -1,0 +1,196 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ShopModels.Models;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ECommerceDbContext
+{
+    public class ECommerceDatabaseContext:DbContext
+    {
+        public ECommerceDatabaseContext(DbContextOptions<ECommerceDatabaseContext> options):base(options)
+        {
+
+        }
+
+
+        public DbSet<Category> Categorys { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
+        public DbSet<ArticleDetails> ArticleDetails { get; set; }
+        public DbSet<ArticleImageVarient> ArticleImageVarients { get; set; }
+        public DbSet<ArticleMatrix> ArticleMatrices { get; set; }
+        public DbSet<ArticleVariant> ArticleVariants { get; set; }
+        public DbSet<CustomerInstallationInfo> CustomerInstallationInfos { get; set; }
+        public DbSet<CustomerProfileInfo> CustomerProfileInfos { get; set; }
+        public DbSet<DeliveryAddress> DeliveryAddresses { get; set; }
+        public DbSet<HaltArticle> HaltArticles { get; set; }
+        public DbSet<OtherInformation> OtherInformations { get; set; }
+        public DbSet<Pricing> Pricings { get; set; }
+        public DbSet<SoldArticle> SoldArticles { get; set; }
+        public DbSet<User> Users { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //Write Fluent API configurations here
+
+            //Property Configurations
+            //Category
+            modelBuilder.Entity<Category>()
+                    .HasKey(c => c.C_Id);
+            modelBuilder.Entity<Category>()
+                        .Property(c => c.description)
+                        .IsRequired();
+            modelBuilder.Entity<Category>()
+                        .Property(c => c.shortName)
+                        .IsRequired();
+            //SubCategory
+            modelBuilder.Entity<SubCategory>()
+                        .HasKey(c => c.S_Id);
+            modelBuilder.Entity<SubCategory>()
+                        .Property(c => c.description)
+                        .IsRequired();
+            //ArticleDetails
+            modelBuilder.Entity<ArticleDetails>()
+                   .HasKey(c => c.ArtD_Id);
+            modelBuilder.Entity<ArticleDetails>()
+                        .Property(c => c.ArticleName)
+                        .IsRequired();
+            modelBuilder.Entity<ArticleDetails>()
+                        .Property(c => c.ShortName)
+                        .IsRequired();
+            modelBuilder.Entity<ArticleDetails>()
+                        .Property(c => c.Description)
+                        .IsRequired()
+                        .HasMaxLength(900);
+
+                //one to one Relationship ArticleDetails with Pricing
+                 modelBuilder.Entity<ArticleDetails>()
+               .HasOne<Pricing>(s => s.Pricing)
+               .WithOne(ad => ad.ArticleDetails)
+               .HasForeignKey<Pricing>(ad => ad.ArticleDetails_Id);
+    
+            //ArticleImageVarient
+            modelBuilder.Entity<ArticleImageVarient>()
+                        .HasKey(c => c.Img_Id);
+            modelBuilder.Entity<ArticleImageVarient>()
+                        .Property(c => c.ImageName);
+            //ArticleMatrix
+            modelBuilder.Entity<ArticleMatrix>()
+                        .HasKey(c => c.ArtM_Id);
+            modelBuilder.Entity<ArticleMatrix>()
+                        .Property(c => c.Description);
+            //ArticleVariant
+            modelBuilder.Entity<ArticleVariant>()
+                        .HasKey(c => c.ArtV_Id);
+            modelBuilder.Entity<ArticleVariant>()
+                        .Property(c => c.ArticleNo);
+            modelBuilder.Entity<ArticleVariant>()
+                        .Property(c => c.Gender);
+            modelBuilder.Entity<ArticleVariant>()
+                       .Property(c => c.Color);
+            modelBuilder.Entity<ArticleVariant>()
+                     .Property(c => c.Size);
+
+            //CustomerInstallationInfo
+            modelBuilder.Entity<CustomerInstallationInfo>()
+                        .HasKey(c => c.CusPIn_Id);
+            modelBuilder.Entity<CustomerInstallationInfo>()
+                        .Property(c => c.CustomerName);
+            modelBuilder.Entity<CustomerInstallationInfo>()
+                   .Property(c => c.CustomerMobileNo);
+            modelBuilder.Entity<CustomerInstallationInfo>()
+                  .Property(c => c.InstallationDate);
+            //CustomerProfileInfo
+            modelBuilder.Entity<CustomerProfileInfo>()
+                        .HasKey(c => c.CustP_Id);
+            modelBuilder.Entity<CustomerProfileInfo>()
+                        .Property(c => c.RecieverName);
+            modelBuilder.Entity<CustomerProfileInfo>()
+                        .Property(c => c.RecieverPhoneNo);
+            modelBuilder.Entity<CustomerProfileInfo>()
+                     .Property(c => c.BuyDate);
+
+            //DeliveryAddress
+            modelBuilder.Entity<DeliveryAddress>()
+                        .HasKey(c => c.DeAdd_Id);
+            modelBuilder.Entity<DeliveryAddress>()
+                        .Property(c => c.District);
+            modelBuilder.Entity<DeliveryAddress>()
+                     .Property(c => c.SubDistrict);
+            modelBuilder.Entity<DeliveryAddress>()
+                     .Property(c => c.RoadNo);
+            modelBuilder.Entity<DeliveryAddress>()
+                   .Property(c => c.HouseNo);
+            modelBuilder.Entity<DeliveryAddress>()
+                  .Property(c => c.floorNo);
+            //HaltArticle
+            modelBuilder.Entity<HaltArticle>()
+                        .HasKey(c => c.HArt_Id);
+            modelBuilder.Entity<HaltArticle>()
+                        .Property(c => c.ArticleName);
+            modelBuilder.Entity<HaltArticle>()
+                .Property(c => c.ArticleNo);
+            modelBuilder.Entity<HaltArticle>()
+               .Property(c => c.Size);
+            modelBuilder.Entity<HaltArticle>()
+               .Property(c => c.Brand);
+            //OtherInformation
+            modelBuilder.Entity<OtherInformation>()
+                        .HasKey(c => c.Oth_Id);
+            modelBuilder.Entity<OtherInformation>()
+                        .Property(c => c.RptCategory);
+            modelBuilder.Entity<OtherInformation>()
+                       .Property(c => c.RptSubCategory);
+
+            //Pricing
+            modelBuilder.Entity<Pricing>()
+                        .HasKey(c => c.Pricing_Id);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.StandardPrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.FranchisePrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.InstitutePrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.PurchaseCost);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.WholeSalePrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.DealerPrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.OtherPrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.VatRate);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.DiscontPrice);
+            modelBuilder.Entity<Pricing>()
+                        .Property(c => c.DiscountRate);
+            //soldarticle
+            modelBuilder.Entity<SoldArticle>()
+                        .HasKey(c => c.SArt_Id);
+            modelBuilder.Entity<SoldArticle>()
+                        .Property(c => c.ArticleName);
+            modelBuilder.Entity<SoldArticle>()
+                      .Property(c => c.ArticleNo);
+            modelBuilder.Entity<SoldArticle>()
+                    .Property(c => c.Color);
+            modelBuilder.Entity<SoldArticle>()
+                 .Property(c => c.Size);
+            modelBuilder.Entity<SoldArticle>()
+                 .Property(c => c.Brand);
+
+            //User
+            modelBuilder.Entity<User>()
+                        .HasKey(c => c.User_Id);
+            modelBuilder.Entity<User>()
+                        .Property(c => c.UserName);
+            modelBuilder.Entity<User>()
+                       .Property(c => c.LoginId);
+            modelBuilder.Entity<User>()
+                    .Property(c => c.Email);
+            modelBuilder.Entity<User>()
+                    .Property(c => c.MobileNo);
+            modelBuilder.Entity<User>()
+                  .Property(c => c.Roles);
+        }
+    }
+}

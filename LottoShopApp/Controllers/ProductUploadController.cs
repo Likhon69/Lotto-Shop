@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
-using E_CommerceApp.Data;
+
 using E_CommerceApp.Models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Hosting;
@@ -24,13 +24,13 @@ namespace E_CommerceApp.Controllers
     public class ProductUploadController : ControllerBase
     {
         private readonly IWebHostEnvironment _env;
-        private readonly DatabaseContext _db;
+      
         private readonly IMapper _mapper;
         private readonly IPostDataServices _postDataServices;
-        public ProductUploadController(IWebHostEnvironment env, DatabaseContext db, IMapper mapper, IPostDataServices postDataServices)
+        public ProductUploadController(IWebHostEnvironment env,  IMapper mapper, IPostDataServices postDataServices)
         {
             _env = env;
-            _db = db;
+           
             _mapper = mapper;
             _postDataServices = postDataServices;
         }
@@ -90,7 +90,8 @@ namespace E_CommerceApp.Controllers
 
             return Ok(data);
         }
-        [HttpGet]
+
+       /* [HttpGet]
         public IActionResult GetAll()
         {
             var data = _db.Shoes;
@@ -102,7 +103,7 @@ namespace E_CommerceApp.Controllers
         {
             var data = _db.Shoes.Find(id);
             return Ok(data);
-        }
+        }*/
     
     }
 }

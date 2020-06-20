@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Repository.Contracts
 {
-    public interface IShoePost: IBaseShopRepository<Shoe>
+    public interface IShoePost: IBaseShopRepository<User>
     {
       
     }

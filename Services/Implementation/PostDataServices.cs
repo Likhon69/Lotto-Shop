@@ -26,7 +26,7 @@ namespace Services.Implementation
 
         public bool PostData(ProductDto model)
         {
-            var product = _mapper.Map<Shoe>(model);
+            var product = _mapper.Map<User>(model);
 
             string finalImage = "";
             int pos = 12;
@@ -44,17 +44,17 @@ namespace Services.Implementation
 
 
            
-                product.ProductImage = finalImage;
+          /*      product.ProductImage = finalImage;
             _unitOfWork.Shoe.Save(product);
-             _unitOfWork.Commit();
+             _unitOfWork.Commit();*/
             return true;
            
         }
 
-        public ICollection<Shoe> GetShoeData()
+      /*  public ICollection<Shoe> GetShoeData()
         {
             var data = _shoePost.GetAll().ToList();
             return data;
-        }
+        }*/
     }
 }

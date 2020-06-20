@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using CommonUnitOfWork;
-using E_CommerceApp.Data;
+using ECommerceDbContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +21,9 @@ using Repository.Contracts;
 using Repository.Implementation;
 using Services.Contracts;
 using Services.Implementation;
+using UserManagement.Contracts;
+using UserManagement.Implementation;
+using static UserManagement.Implementation.CustomEcommerceAuthenticationHandler;
 
 namespace E_CommerceApp
 {
@@ -41,12 +44,12 @@ namespace E_CommerceApp
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
-            services.AddTransient<DbContext, DatabaseContext>();
-            services.AddDbContext<DatabaseContext>(config =>
+            services.AddTransient<DbContext, ECommerceDatabaseContext>();
+            services.AddDbContext<ECommerceDatabaseContext>(config =>
             {
                 config.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
             });
-
+          
             services.Configure<FormOptions>(config =>
             {
                 config.ValueLengthLimit = int.MaxValue;
@@ -69,6 +72,9 @@ namespace E_CommerceApp
             services.AddScoped<IUnitOfWork, UnitofWork>();
             services.AddTransient<IShoePost, ShoePost>();
             services.AddTransient<IPostDataServices, PostDataServices>();
+            services.AddTransient<ITokenEcommerceAuthentication, TokenEcommerceAuthentication>();
+            services.AddAuthentication("Basic")
+                .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));
         }
 
@@ -98,6 +104,7 @@ namespace E_CommerceApp
             app.UseRouting();
             app.UseStaticFiles();
             app.UseCors("CorsPolicy");
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

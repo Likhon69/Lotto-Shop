@@ -12,5 +12,6 @@ namespace ShopModels.Models
         public DateTime Created_At { get; set; }
         public int Updated_By { get; set; }
         public DateTime Updated_At { get; set; }
+        public ArticleDetails ArticleDetails { get; set; }
     }
 }

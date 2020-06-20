@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Repository.Implementation
 {
-    public class ShoePost : BaseShopRepository<Shoe>, IShoePost
+    public class ShoePost : BaseShopRepository<User>, IShoePost
     {
         private DbContext _db;
         public ShoePost(DbContext db):base(db)

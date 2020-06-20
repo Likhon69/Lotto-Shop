@@ -12,5 +12,6 @@ namespace ShopModels.Models
         public string Color { get; set; }
         public int Size { get; set; }
         public string Style { get; set; }
+        public ArticleDetails ArticleDetails { get; set; }
     }
 }
