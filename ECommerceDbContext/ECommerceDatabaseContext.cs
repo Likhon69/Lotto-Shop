@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopModels.Models;
+using ShopModels.OrderModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,6 +29,12 @@ namespace ECommerceDbContext
         public DbSet<Pricing> Pricings { get; set; }
         public DbSet<SoldArticle> SoldArticles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<TestClass1> TestClass1s { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Item> Items { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Write Fluent API configurations here
@@ -191,6 +198,34 @@ namespace ECommerceDbContext
                     .Property(c => c.MobileNo);
             modelBuilder.Entity<User>()
                   .Property(c => c.Roles);
+
+            //Brand
+            modelBuilder.Entity<Brand>()
+                        .HasKey(c => c.Brand_Id);
+            modelBuilder.Entity<Brand>()
+                        .Property(c => c.BrandName)
+                        .IsRequired();
+
+            //OrderModel
+
+            //Customer
+
+            modelBuilder.Entity<Customer>()
+                        .HasKey(c => c.CustomerID);
+            modelBuilder.Entity<Customer>()
+                        .Property(c => c.Name);
+            //Order
+            modelBuilder.Entity<Order>()
+                        .HasKey(c => c.OrderID);
+            //item
+            modelBuilder.Entity<Item>()
+                        .HasKey(c => c.ItemID);
+
+            //OrderItem
+            modelBuilder.Entity<OrderItem>()
+                        .HasKey(c => c.OrderItemID);
+
+
         }
     }
 }

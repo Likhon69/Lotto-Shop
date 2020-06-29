@@ -26,9 +26,15 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ArticleMatrixArtM_Id")
+                        .HasColumnType("int");
+
                     b.Property<string>("ArticleName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Brand_Id")
+                        .HasColumnType("int");
 
                     b.Property<int?>("CategoryC_Id")
                         .HasColumnType("int");
@@ -46,6 +52,10 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ArtD_Id");
+
+                    b.HasIndex("ArticleMatrixArtM_Id");
+
+                    b.HasIndex("Brand_Id");
 
                     b.HasIndex("CategoryC_Id");
 
@@ -131,6 +141,25 @@ namespace ECommerceDbContext.Migrations
                     b.HasIndex("ArticleDetailsArtD_Id");
 
                     b.ToTable("ArticleVariants");
+                });
+
+            modelBuilder.Entity("ShopModels.Models.Brand", b =>
+                {
+                    b.Property<int>("Brand_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BrandName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Brand_Id");
+
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("ShopModels.Models.Category", b =>
@@ -369,6 +398,36 @@ namespace ECommerceDbContext.Migrations
                     b.ToTable("SubCategories");
                 });
 
+            modelBuilder.Entity("ShopModels.Models.TestClass1", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("DiscountPice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("VatRate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TestClass1s");
+                });
+
             modelBuilder.Entity("ShopModels.Models.User", b =>
                 {
                     b.Property<int>("User_Id")
@@ -399,8 +458,100 @@ namespace ECommerceDbContext.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("ShopModels.OrderModels.Customer", b =>
+                {
+                    b.Property<int>("CustomerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerID");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Item", b =>
+                {
+                    b.Property<int>("ItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("ItemID");
+
+                    b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
+                {
+                    b.Property<long>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("GTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("OrderNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PMethod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("CustomerID");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
+                {
+                    b.Property<long>("OrderItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ItemID")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("OrderID")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemID");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderItems");
+                });
+
             modelBuilder.Entity("ShopModels.Models.ArticleDetails", b =>
                 {
+                    b.HasOne("ShopModels.Models.ArticleMatrix", "ArticleMatrix")
+                        .WithMany()
+                        .HasForeignKey("ArticleMatrixArtM_Id");
+
+                    b.HasOne("ShopModels.Models.Brand", "Brand")
+                        .WithMany()
+                        .HasForeignKey("Brand_Id");
+
                     b.HasOne("ShopModels.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryC_Id");
@@ -438,6 +589,24 @@ namespace ECommerceDbContext.Migrations
                         .HasForeignKey("ShopModels.Models.Pricing", "ArticleDetails_Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
+                {
+                    b.HasOne("ShopModels.OrderModels.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerID");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
+                {
+                    b.HasOne("ShopModels.OrderModels.Item", "Item")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("ItemID");
+
+                    b.HasOne("ShopModels.OrderModels.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderID");
                 });
 #pragma warning restore 612, 618
         }
