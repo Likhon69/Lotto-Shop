@@ -4,14 +4,16 @@ using ECommerceDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerceDbContext.Migrations
 {
     [DbContext(typeof(ECommerceDatabaseContext))]
-    partial class ECommerceDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200701070735_Data_Type-Change_Vat")]
+    partial class Data_TypeChange_Vat
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -4,14 +4,16 @@ using ECommerceDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerceDbContext.Migrations
 {
     [DbContext(typeof(ECommerceDatabaseContext))]
-    partial class ECommerceDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200701070411_Pricing_Column_Change")]
+    partial class Pricing_Column_Change
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -474,8 +476,8 @@ namespace ECommerceDbContext.Migrations
                     b.Property<string>("VatTypeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Vat_Rat")
-                        .HasColumnType("float");
+                    b.Property<int>("Vat_Rat")
+                        .HasColumnType("int");
 
                     b.HasKey("Vat_Id");
 

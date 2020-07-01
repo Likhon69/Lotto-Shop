@@ -14,9 +14,9 @@ namespace ShopModels.Models
         public Decimal WholeSalePrice { get; set; }
         public Decimal DealerPrice { get; set; }
         public Decimal OtherPrice { get; set; }
-        public string VatRate { get; set; }
-        public Decimal DiscontPrice { get; set; }
-        public string DiscountRate { get; set; }
+      
+        public int DiscontPrice { get; set; }
+        public Decimal DiscountRate { get; set; }
         public int ArticleDetails_Id { get; set; }
         public ArticleDetails ArticleDetails { get; set; }
     }

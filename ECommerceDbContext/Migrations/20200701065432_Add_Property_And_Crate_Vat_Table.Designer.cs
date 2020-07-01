@@ -4,14 +4,16 @@ using ECommerceDbContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerceDbContext.Migrations
 {
     [DbContext(typeof(ECommerceDatabaseContext))]
-    partial class ECommerceDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20200701065432_Add_Property_And_Crate_Vat_Table")]
+    partial class Add_Property_And_Crate_Vat_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -326,11 +328,11 @@ namespace ECommerceDbContext.Migrations
                     b.Property<decimal>("DealerPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("DiscontPrice")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("DiscountRate")
+                    b.Property<decimal>("DiscontPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("DiscountRate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("FranchisePrice")
                         .HasColumnType("decimal(18,2)");
@@ -346,6 +348,9 @@ namespace ECommerceDbContext.Migrations
 
                     b.Property<decimal>("StandardPrice")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("VatRate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("WholeSalePrice")
                         .HasColumnType("decimal(18,2)");
@@ -474,8 +479,8 @@ namespace ECommerceDbContext.Migrations
                     b.Property<string>("VatTypeName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Vat_Rat")
-                        .HasColumnType("float");
+                    b.Property<int>("Vat_Rat")
+                        .HasColumnType("int");
 
                     b.HasKey("Vat_Id");
 

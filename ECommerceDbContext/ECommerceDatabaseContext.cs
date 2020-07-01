@@ -35,6 +35,7 @@ namespace ECommerceDbContext
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Vat> Vats { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Write Fluent API configurations here
@@ -59,8 +60,11 @@ namespace ECommerceDbContext
             modelBuilder.Entity<ArticleDetails>()
                    .HasKey(c => c.ArtD_Id);
             modelBuilder.Entity<ArticleDetails>()
-                        .Property(c => c.ArticleName)
+                        .Property(c => c.ArticleTitle)
                         .IsRequired();
+            modelBuilder.Entity<ArticleDetails>()
+                       .Property(c => c.ArticleSubtitle)
+                       .IsRequired();
             modelBuilder.Entity<ArticleDetails>()
                         .Property(c => c.ShortName)
                         .IsRequired();
@@ -165,8 +169,7 @@ namespace ECommerceDbContext
                         .Property(c => c.DealerPrice);
             modelBuilder.Entity<Pricing>()
                         .Property(c => c.OtherPrice);
-            modelBuilder.Entity<Pricing>()
-                        .Property(c => c.VatRate);
+         
             modelBuilder.Entity<Pricing>()
                         .Property(c => c.DiscontPrice);
             modelBuilder.Entity<Pricing>()
@@ -204,6 +207,15 @@ namespace ECommerceDbContext
                         .HasKey(c => c.Brand_Id);
             modelBuilder.Entity<Brand>()
                         .Property(c => c.BrandName)
+                        .IsRequired();
+            //Vat
+
+            modelBuilder.Entity<Vat>()
+                        .HasKey(c => c.Vat_Id);
+            modelBuilder.Entity<Vat>()
+                        .Property(c => c.VatTypeName);
+            modelBuilder.Entity<Vat>()
+                        .Property(c => c.Vat_Rat)
                         .IsRequired();
 
             //OrderModel
