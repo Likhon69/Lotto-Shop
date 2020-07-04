@@ -69,5 +69,13 @@ namespace CommonUnitOfWork
 
         private IShoePost _shoePost;
         public IShoePost Shoe => _shoePost ?? new ShoePost(_context);
+        private IArticleDetailsPostRepository _articleDetailsPostRepository;
+        public IArticleDetailsPostRepository ArticleDetails => _articleDetailsPostRepository ?? new ArticleDetailsPostRepository(_context);
+        private IArticleImageVariantPostRepository _articleImageVariantPostRepository;
+        public IArticleImageVariantPostRepository ArticleImageVariant => _articleImageVariantPostRepository ?? new ArticleImageVariantPostRepository(_context);
+        private IArticleVariantPostRepository _articleVariantPostRepository;
+        public IArticleVariantPostRepository ArticleVariant => _articleVariantPostRepository ?? new ArticleVariantPostRepository(_context);
+        private IPricingPostRepository _pricingPostRepository;
+        public IPricingPostRepository Pricing => _pricingPostRepository ?? new PricingPostRepository(_context);
     }
 }

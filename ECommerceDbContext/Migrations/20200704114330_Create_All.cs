@@ -3,10 +3,29 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ECommerceDbContext.Migrations
 {
-    public partial class Create_All_Table : Migration
+    public partial class Create_All : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "ArticleDetails",
+                columns: table => new
+                {
+                    ArtD_Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ArticleTitle = table.Column<string>(nullable: false),
+                    ArticleSubtitle = table.Column<string>(nullable: false),
+                    CategoryC_Id = table.Column<int>(nullable: false),
+                    SubCategoryS_Id = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(maxLength: 900, nullable: false),
+                    Brand_Id = table.Column<int>(nullable: false),
+                    Vat_Id = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ArticleDetails", x => x.ArtD_Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "ArticleMatrices",
                 columns: table => new
@@ -18,6 +37,20 @@ namespace ECommerceDbContext.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ArticleMatrices", x => x.ArtM_Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Brands",
+                columns: table => new
+                {
+                    Brand_Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BrandName = table.Column<string>(nullable: false),
+                    Status = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Brands", x => x.Brand_Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -48,6 +81,19 @@ namespace ECommerceDbContext.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerInstallationInfos", x => x.CusPIn_Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Customers",
+                columns: table => new
+                {
+                    CustomerID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Customers", x => x.CustomerID);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,6 +128,20 @@ namespace ECommerceDbContext.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_HaltArticles", x => x.HArt_Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Items",
+                columns: table => new
+                {
+                    ItemID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Items", x => x.ItemID);
                 });
 
             migrationBuilder.CreateTable(
@@ -130,7 +190,25 @@ namespace ECommerceDbContext.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "User",
+                name: "TestClass1s",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FirstName = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false),
+                    LastName = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false),
+                    DiscountPice = table.Column<decimal>(nullable: false),
+                    VatRate = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TestClass1s", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
                 columns: table => new
                 {
                     User_Id = table.Column<int>(nullable: false)
@@ -139,62 +217,26 @@ namespace ECommerceDbContext.Migrations
                     LoginId = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     MobileNo = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true),
                     Roles = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_User", x => x.User_Id);
+                    table.PrimaryKey("PK_Users", x => x.User_Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CustomerProfileInfos",
+                name: "Vats",
                 columns: table => new
                 {
-                    CustP_Id = table.Column<int>(nullable: false)
+                    Vat_Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DeliveryAddressDeAdd_Id = table.Column<int>(nullable: true),
-                    RecieverName = table.Column<string>(nullable: true),
-                    RecieverPhoneNo = table.Column<string>(nullable: true),
-                    BuyDate = table.Column<DateTime>(nullable: false)
+                    VatTypeName = table.Column<string>(nullable: true),
+                    Vat_Rat = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CustomerProfileInfos", x => x.CustP_Id);
-                    table.ForeignKey(
-                        name: "FK_CustomerProfileInfos_DeliveryAddresses_DeliveryAddressDeAdd_Id",
-                        column: x => x.DeliveryAddressDeAdd_Id,
-                        principalTable: "DeliveryAddresses",
-                        principalColumn: "DeAdd_Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ArticleDetails",
-                columns: table => new
-                {
-                    ArtD_Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryC_Id = table.Column<int>(nullable: true),
-                    SubCategoryS_Id = table.Column<int>(nullable: true),
-                    ArticleName = table.Column<string>(nullable: false),
-                    ShortName = table.Column<string>(nullable: false),
-                    Description = table.Column<string>(maxLength: 900, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ArticleDetails", x => x.ArtD_Id);
-                    table.ForeignKey(
-                        name: "FK_ArticleDetails_Categorys_CategoryC_Id",
-                        column: x => x.CategoryC_Id,
-                        principalTable: "Categorys",
-                        principalColumn: "C_Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ArticleDetails_SubCategories_SubCategoryS_Id",
-                        column: x => x.SubCategoryS_Id,
-                        principalTable: "SubCategories",
-                        principalColumn: "S_Id",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_Vats", x => x.Vat_Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -204,10 +246,6 @@ namespace ECommerceDbContext.Migrations
                     Img_Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ImageName = table.Column<string>(nullable: true),
-                    Created_By = table.Column<int>(nullable: false),
-                    Created_At = table.Column<DateTime>(nullable: false),
-                    Updated_By = table.Column<int>(nullable: false),
-                    Updated_At = table.Column<DateTime>(nullable: false),
                     ArticleDetailsArtD_Id = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -258,31 +296,91 @@ namespace ECommerceDbContext.Migrations
                     WholeSalePrice = table.Column<decimal>(nullable: false),
                     DealerPrice = table.Column<decimal>(nullable: false),
                     OtherPrice = table.Column<decimal>(nullable: false),
-                    VatRate = table.Column<string>(nullable: true),
-                    DiscontPrice = table.Column<decimal>(nullable: false),
-                    DiscountRate = table.Column<string>(nullable: true),
-                    ArticleDetails_Id = table.Column<int>(nullable: false)
+                    DiscontPrice = table.Column<int>(nullable: false),
+                    DiscountRate = table.Column<decimal>(nullable: false),
+                    ArticleDetailsArtD_Id = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pricings", x => x.Pricing_Id);
                     table.ForeignKey(
-                        name: "FK_Pricings_ArticleDetails_ArticleDetails_Id",
-                        column: x => x.ArticleDetails_Id,
+                        name: "FK_Pricings_ArticleDetails_ArticleDetailsArtD_Id",
+                        column: x => x.ArticleDetailsArtD_Id,
                         principalTable: "ArticleDetails",
                         principalColumn: "ArtD_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ArticleDetails_CategoryC_Id",
-                table: "ArticleDetails",
-                column: "CategoryC_Id");
+            migrationBuilder.CreateTable(
+                name: "Orders",
+                columns: table => new
+                {
+                    OrderID = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderNo = table.Column<string>(nullable: true),
+                    CustomerID = table.Column<int>(nullable: true),
+                    PMethod = table.Column<string>(nullable: true),
+                    GTotal = table.Column<decimal>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Orders", x => x.OrderID);
+                    table.ForeignKey(
+                        name: "FK_Orders_Customers_CustomerID",
+                        column: x => x.CustomerID,
+                        principalTable: "Customers",
+                        principalColumn: "CustomerID",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_ArticleDetails_SubCategoryS_Id",
-                table: "ArticleDetails",
-                column: "SubCategoryS_Id");
+            migrationBuilder.CreateTable(
+                name: "CustomerProfileInfos",
+                columns: table => new
+                {
+                    CustP_Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DeliveryAddressDeAdd_Id = table.Column<int>(nullable: true),
+                    RecieverName = table.Column<string>(nullable: true),
+                    RecieverPhoneNo = table.Column<string>(nullable: true),
+                    BuyDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerProfileInfos", x => x.CustP_Id);
+                    table.ForeignKey(
+                        name: "FK_CustomerProfileInfos_DeliveryAddresses_DeliveryAddressDeAdd_Id",
+                        column: x => x.DeliveryAddressDeAdd_Id,
+                        principalTable: "DeliveryAddresses",
+                        principalColumn: "DeAdd_Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderItems",
+                columns: table => new
+                {
+                    OrderItemID = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    OrderID = table.Column<long>(nullable: true),
+                    ItemID = table.Column<int>(nullable: true),
+                    Quantity = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderItems", x => x.OrderItemID);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Items_ItemID",
+                        column: x => x.ItemID,
+                        principalTable: "Items",
+                        principalColumn: "ItemID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_OrderItems_Orders_OrderID",
+                        column: x => x.OrderID,
+                        principalTable: "Orders",
+                        principalColumn: "OrderID",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ArticleImageVarients_ArticleDetailsArtD_Id",
@@ -300,10 +398,24 @@ namespace ECommerceDbContext.Migrations
                 column: "DeliveryAddressDeAdd_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pricings_ArticleDetails_Id",
+                name: "IX_OrderItems_ItemID",
+                table: "OrderItems",
+                column: "ItemID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderItems_OrderID",
+                table: "OrderItems",
+                column: "OrderID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_CustomerID",
+                table: "Orders",
+                column: "CustomerID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pricings_ArticleDetailsArtD_Id",
                 table: "Pricings",
-                column: "ArticleDetails_Id",
-                unique: true);
+                column: "ArticleDetailsArtD_Id");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -318,6 +430,12 @@ namespace ECommerceDbContext.Migrations
                 name: "ArticleVariants");
 
             migrationBuilder.DropTable(
+                name: "Brands");
+
+            migrationBuilder.DropTable(
+                name: "Categorys");
+
+            migrationBuilder.DropTable(
                 name: "CustomerInstallationInfos");
 
             migrationBuilder.DropTable(
@@ -325,6 +443,9 @@ namespace ECommerceDbContext.Migrations
 
             migrationBuilder.DropTable(
                 name: "HaltArticles");
+
+            migrationBuilder.DropTable(
+                name: "OrderItems");
 
             migrationBuilder.DropTable(
                 name: "OtherInformations");
@@ -336,19 +457,31 @@ namespace ECommerceDbContext.Migrations
                 name: "SoldArticles");
 
             migrationBuilder.DropTable(
-                name: "User");
+                name: "SubCategories");
+
+            migrationBuilder.DropTable(
+                name: "TestClass1s");
+
+            migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Vats");
 
             migrationBuilder.DropTable(
                 name: "DeliveryAddresses");
 
             migrationBuilder.DropTable(
+                name: "Items");
+
+            migrationBuilder.DropTable(
+                name: "Orders");
+
+            migrationBuilder.DropTable(
                 name: "ArticleDetails");
 
             migrationBuilder.DropTable(
-                name: "Categorys");
-
-            migrationBuilder.DropTable(
-                name: "SubCategories");
+                name: "Customers");
         }
     }
 }

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerceDbContext.Migrations
 {
     [DbContext(typeof(ECommerceDatabaseContext))]
-    [Migration("20200621085205_Create_Brand_Table")]
-    partial class Create_Brand_Table
+    [Migration("20200704115547_Remove_ArticleDetails")]
+    partial class Remove_ArticleDetails
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,14 +28,18 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ArticleName")
+                    b.Property<string>("ArticleSubtitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Brand_Id")
+                    b.Property<string>("ArticleTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Brand_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryC_Id")
+                    b.Property<int>("CategoryC_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -43,20 +47,13 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("nvarchar(900)")
                         .HasMaxLength(900);
 
-                    b.Property<string>("ShortName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SubCategoryS_Id")
+                        .HasColumnType("int");
 
-                    b.Property<int?>("SubCategoryS_Id")
+                    b.Property<int>("Vat_Id")
                         .HasColumnType("int");
 
                     b.HasKey("ArtD_Id");
-
-                    b.HasIndex("Brand_Id");
-
-                    b.HasIndex("CategoryC_Id");
-
-                    b.HasIndex("SubCategoryS_Id");
 
                     b.ToTable("ArticleDetails");
                 });
@@ -71,20 +68,8 @@ namespace ECommerceDbContext.Migrations
                     b.Property<int?>("ArticleDetailsArtD_Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Created_By")
-                        .HasColumnType("int");
-
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Updated_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Updated_By")
-                        .HasColumnType("int");
 
                     b.HasKey("Img_Id");
 
@@ -308,17 +293,14 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ArticleDetails_Id")
-                        .HasColumnType("int");
-
                     b.Property<decimal>("DealerPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("DiscontPrice")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("DiscontPrice")
+                        .HasColumnType("int");
 
-                    b.Property<string>("DiscountRate")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("DiscountRate")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("FranchisePrice")
                         .HasColumnType("decimal(18,2)");
@@ -335,16 +317,10 @@ namespace ECommerceDbContext.Migrations
                     b.Property<decimal>("StandardPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("VatRate")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("WholeSalePrice")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Pricing_Id");
-
-                    b.HasIndex("ArticleDetails_Id")
-                        .IsUnique();
 
                     b.ToTable("Pricings");
                 });
@@ -405,10 +381,19 @@ namespace ECommerceDbContext.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("DiscountPice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("VatRate")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -446,31 +431,118 @@ namespace ECommerceDbContext.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ShopModels.Models.ArticleDetails", b =>
+            modelBuilder.Entity("ShopModels.Models.Vat", b =>
                 {
-                    b.HasOne("ShopModels.Models.Brand", "Brand")
-                        .WithMany()
-                        .HasForeignKey("Brand_Id");
+                    b.Property<int>("Vat_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.HasOne("ShopModels.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryC_Id");
+                    b.Property<string>("VatTypeName")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasOne("ShopModels.Models.SubCategory", "SubCategory")
-                        .WithMany()
-                        .HasForeignKey("SubCategoryS_Id");
+                    b.Property<double>("Vat_Rat")
+                        .HasColumnType("float");
+
+                    b.HasKey("Vat_Id");
+
+                    b.ToTable("Vats");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Customer", b =>
+                {
+                    b.Property<int>("CustomerID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerID");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Item", b =>
+                {
+                    b.Property<int>("ItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("ItemID");
+
+                    b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
+                {
+                    b.Property<long>("OrderID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("GTotal")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("OrderNo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PMethod")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("OrderID");
+
+                    b.HasIndex("CustomerID");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
+                {
+                    b.Property<long>("OrderItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ItemID")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("OrderID")
+                        .HasColumnType("bigint");
+
+                    b.Property<int?>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("OrderItemID");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("ShopModels.Models.ArticleImageVarient", b =>
                 {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
+                    b.HasOne("ShopModels.Models.ArticleDetails", null)
                         .WithMany("ArticleImageVarients")
                         .HasForeignKey("ArticleDetailsArtD_Id");
                 });
 
             modelBuilder.Entity("ShopModels.Models.ArticleVariant", b =>
                 {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
+                    b.HasOne("ShopModels.Models.ArticleDetails", null)
                         .WithMany("ArticleVariants")
                         .HasForeignKey("ArticleDetailsArtD_Id");
                 });
@@ -482,13 +554,22 @@ namespace ECommerceDbContext.Migrations
                         .HasForeignKey("DeliveryAddressDeAdd_Id");
                 });
 
-            modelBuilder.Entity("ShopModels.Models.Pricing", b =>
+            modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
                 {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
-                        .WithOne("Pricing")
-                        .HasForeignKey("ShopModels.Models.Pricing", "ArticleDetails_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("ShopModels.OrderModels.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerID");
+                });
+
+            modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
+                {
+                    b.HasOne("ShopModels.OrderModels.Item", "Item")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("ItemID");
+
+                    b.HasOne("ShopModels.OrderModels.Order", "Order")
+                        .WithMany("OrderItems")
+                        .HasForeignKey("OrderID");
                 });
 #pragma warning restore 612, 618
         }

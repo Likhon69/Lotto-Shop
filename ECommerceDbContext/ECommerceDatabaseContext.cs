@@ -65,19 +65,17 @@ namespace ECommerceDbContext
             modelBuilder.Entity<ArticleDetails>()
                        .Property(c => c.ArticleSubtitle)
                        .IsRequired();
-            modelBuilder.Entity<ArticleDetails>()
-                        .Property(c => c.ShortName)
-                        .IsRequired();
+          
             modelBuilder.Entity<ArticleDetails>()
                         .Property(c => c.Description)
                         .IsRequired()
                         .HasMaxLength(900);
 
                 //one to one Relationship ArticleDetails with Pricing
-                 modelBuilder.Entity<ArticleDetails>()
+              /*   modelBuilder.Entity<ArticleDetails>()
                .HasOne<Pricing>(s => s.Pricing)
                .WithOne(ad => ad.ArticleDetails)
-               .HasForeignKey<Pricing>(ad => ad.ArticleDetails_Id);
+               .HasForeignKey<Pricing>(ad => ad.ArticleDetails_Id);*/
     
             //ArticleImageVarient
             modelBuilder.Entity<ArticleImageVarient>()

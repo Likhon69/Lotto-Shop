@@ -26,9 +26,6 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArticleMatrixArtM_Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("ArticleSubtitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -37,10 +34,10 @@ namespace ECommerceDbContext.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Brand_Id")
+                    b.Property<int>("Brand_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryC_Id")
+                    b.Property<int>("CategoryC_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -48,27 +45,13 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("nvarchar(900)")
                         .HasMaxLength(900);
 
-                    b.Property<string>("ShortName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("SubCategoryS_Id")
+                    b.Property<int>("SubCategoryS_Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Vat_Id")
+                    b.Property<int>("Vat_Id")
                         .HasColumnType("int");
 
                     b.HasKey("ArtD_Id");
-
-                    b.HasIndex("ArticleMatrixArtM_Id");
-
-                    b.HasIndex("Brand_Id");
-
-                    b.HasIndex("CategoryC_Id");
-
-                    b.HasIndex("SubCategoryS_Id");
-
-                    b.HasIndex("Vat_Id");
 
                     b.ToTable("ArticleDetails");
                 });
@@ -83,20 +66,8 @@ namespace ECommerceDbContext.Migrations
                     b.Property<int?>("ArticleDetailsArtD_Id")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Created_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Created_By")
-                        .HasColumnType("int");
-
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Updated_At")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Updated_By")
-                        .HasColumnType("int");
 
                     b.HasKey("Img_Id");
 
@@ -352,9 +323,6 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasKey("Pricing_Id");
 
-                    b.HasIndex("ArticleDetails_Id")
-                        .IsUnique();
-
                     b.ToTable("Pricings");
                 });
 
@@ -566,39 +534,16 @@ namespace ECommerceDbContext.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("ShopModels.Models.ArticleDetails", b =>
-                {
-                    b.HasOne("ShopModels.Models.ArticleMatrix", "ArticleMatrix")
-                        .WithMany()
-                        .HasForeignKey("ArticleMatrixArtM_Id");
-
-                    b.HasOne("ShopModels.Models.Brand", "Brand")
-                        .WithMany()
-                        .HasForeignKey("Brand_Id");
-
-                    b.HasOne("ShopModels.Models.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryC_Id");
-
-                    b.HasOne("ShopModels.Models.SubCategory", "SubCategory")
-                        .WithMany()
-                        .HasForeignKey("SubCategoryS_Id");
-
-                    b.HasOne("ShopModels.Models.Vat", "Vat")
-                        .WithMany()
-                        .HasForeignKey("Vat_Id");
-                });
-
             modelBuilder.Entity("ShopModels.Models.ArticleImageVarient", b =>
                 {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
+                    b.HasOne("ShopModels.Models.ArticleDetails", null)
                         .WithMany("ArticleImageVarients")
                         .HasForeignKey("ArticleDetailsArtD_Id");
                 });
 
             modelBuilder.Entity("ShopModels.Models.ArticleVariant", b =>
                 {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
+                    b.HasOne("ShopModels.Models.ArticleDetails", null)
                         .WithMany("ArticleVariants")
                         .HasForeignKey("ArticleDetailsArtD_Id");
                 });
@@ -608,15 +553,6 @@ namespace ECommerceDbContext.Migrations
                     b.HasOne("ShopModels.Models.DeliveryAddress", "DeliveryAddress")
                         .WithMany()
                         .HasForeignKey("DeliveryAddressDeAdd_Id");
-                });
-
-            modelBuilder.Entity("ShopModels.Models.Pricing", b =>
-                {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
-                        .WithOne("Pricing")
-                        .HasForeignKey("ShopModels.Models.Pricing", "ArticleDetails_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.Order", b =>

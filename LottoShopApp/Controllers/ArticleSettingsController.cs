@@ -6,6 +6,7 @@ using ECommerceDbContext;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Services.Contracts;
 using ShopModels.ViewModel;
 
 namespace E_CommerceApp.Controllers
@@ -17,10 +18,12 @@ namespace E_CommerceApp.Controllers
     {
       
         private readonly ECommerceDatabaseContext _db;
-        
-        public ArticleSettingsController(ECommerceDatabaseContext db)
+        private IArticleDetailsPostService _services;
+
+        public ArticleSettingsController(ECommerceDatabaseContext db, IArticleDetailsPostService services)
         {
             _db = db;
+            _services = services;
         }
         [HttpGet]
         public IActionResult GetCategorys()
@@ -42,6 +45,20 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetVat()
         {
             return Ok(_db.Vats);
+        }
+
+        [HttpPost]
+        public IActionResult GetAllArticleData(ArticleDetailsDto model)
+        {
+            var result = _services.ArticleDetailsPost(model);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

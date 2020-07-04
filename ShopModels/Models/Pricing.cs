@@ -6,6 +6,7 @@ namespace ShopModels.Models
 {
     public class Pricing
     {
+       
         public int Pricing_Id { get; set; }
         public Decimal StandardPrice { get; set; }
         public Decimal FranchisePrice { get; set; }
@@ -18,6 +19,6 @@ namespace ShopModels.Models
         public int DiscontPrice { get; set; }
         public Decimal DiscountRate { get; set; }
         public int ArticleDetails_Id { get; set; }
-        public ArticleDetails ArticleDetails { get; set; }
+
     }
 }

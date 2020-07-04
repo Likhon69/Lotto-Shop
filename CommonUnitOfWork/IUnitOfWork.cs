@@ -8,6 +8,10 @@ namespace CommonUnitOfWork
     public interface IUnitOfWork : IDisposable
     {
         IShoePost Shoe { get; }
+        IArticleDetailsPostRepository ArticleDetails { get; }
+        IArticleImageVariantPostRepository ArticleImageVariant { get; }
+        IArticleVariantPostRepository ArticleVariant { get; }
+        IPricingPostRepository Pricing { get; }
         int Commit();
     }
 }

@@ -72,6 +72,9 @@ namespace E_CommerceApp
             services.AddScoped<IUnitOfWork, UnitofWork>();
             services.AddTransient<IShoePost, ShoePost>();
             services.AddTransient<IPostDataServices, PostDataServices>();
+            services.AddTransient<IArticleDetailsPostService, ArticleDetailsPostService>();
+            services.AddTransient<IArticleDetailsPostRepository, ArticleDetailsPostRepository>();
+            services.AddTransient<IPricingPostRepository, PricingPostRepository>();
             services.AddTransient<ITokenEcommerceAuthentication, TokenEcommerceAuthentication>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);

@@ -2,13 +2,13 @@
 
 namespace ECommerceDbContext.Migrations
 {
-    public partial class Add_Column_Age : Migration
+    public partial class ArticleDetails_Id_Add : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<int>(
-                name: "Age",
-                table: "TestClass1s",
+                name: "ArticleDetails_Id",
+                table: "Pricings",
                 nullable: false,
                 defaultValue: 0);
         }
@@ -16,8 +16,8 @@ namespace ECommerceDbContext.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Age",
-                table: "TestClass1s");
+                name: "ArticleDetails_Id",
+                table: "Pricings");
         }
     }
 }
