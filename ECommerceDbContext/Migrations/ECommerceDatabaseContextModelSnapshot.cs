@@ -480,7 +480,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasKey("ItemID");
 
-                    b.ToTable("Items");
+                    b.ToTable("Item");
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
@@ -506,7 +506,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
@@ -531,7 +531,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasIndex("OrderID");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("ShopModels.Models.ArticleImageVarient", b =>

@@ -34,7 +34,26 @@ namespace Services.Implementation
                 {
                    foreach(var Image in model.ArticleImageList)
                     {
+                        string finalImage = "";
+                        int pos = 12;
+                        if (pos >= 0)
+                        {
+                            // String after founder  
+                            string afterFounder = Image.ImageName.Remove(pos);
+
+                            // Remove everything before founder but include founder  
+                            string beforeFounder = Image.ImageName.Remove(0, pos);
+                            finalImage = beforeFounder;
+
+
+                        }
+                        Image.ImageName = finalImage;
                         dataArt.ArticleImageVarients.Add(Image);
+                    }
+                   foreach(var variant in model.ArticleVariantList)
+                    {
+                       
+                        dataArt.ArticleVariants.Add(variant);
                     }
                     _unitOfWork.ArticleDetails.Add(dataArt);
                     _unitOfWork.Commit();

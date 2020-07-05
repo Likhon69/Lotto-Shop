@@ -53,7 +53,7 @@ namespace E_CommerceApp.Controllers
             var result = _services.ArticleDetailsPost(model);
             if (result != null)
             {
-                return Ok(result);
+                return Ok();
             }
             else
             {

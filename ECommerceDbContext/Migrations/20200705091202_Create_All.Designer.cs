@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerceDbContext.Migrations
 {
     [DbContext(typeof(ECommerceDatabaseContext))]
-    [Migration("20200704114330_Create_All")]
+    [Migration("20200705091202_Create_All")]
     partial class Create_All
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -293,7 +293,7 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ArticleDetailsArtD_Id")
+                    b.Property<int>("ArticleDetails_Id")
                         .HasColumnType("int");
 
                     b.Property<decimal>("DealerPrice")
@@ -324,8 +324,6 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Pricing_Id");
-
-                    b.HasIndex("ArticleDetailsArtD_Id");
 
                     b.ToTable("Pricings");
                 });
@@ -484,7 +482,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasKey("ItemID");
 
-                    b.ToTable("Items");
+                    b.ToTable("Item");
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
@@ -510,7 +508,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.OrderItem", b =>
@@ -535,7 +533,7 @@ namespace ECommerceDbContext.Migrations
 
                     b.HasIndex("OrderID");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItem");
                 });
 
             modelBuilder.Entity("ShopModels.Models.ArticleImageVarient", b =>
@@ -557,13 +555,6 @@ namespace ECommerceDbContext.Migrations
                     b.HasOne("ShopModels.Models.DeliveryAddress", "DeliveryAddress")
                         .WithMany()
                         .HasForeignKey("DeliveryAddressDeAdd_Id");
-                });
-
-            modelBuilder.Entity("ShopModels.Models.Pricing", b =>
-                {
-                    b.HasOne("ShopModels.Models.ArticleDetails", "ArticleDetails")
-                        .WithMany()
-                        .HasForeignKey("ArticleDetailsArtD_Id");
                 });
 
             modelBuilder.Entity("ShopModels.OrderModels.Order", b =>
