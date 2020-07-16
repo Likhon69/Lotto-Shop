@@ -15,6 +15,7 @@ namespace ECommerceDbContext
         }
 
 
+
         public DbSet<Category> Categorys { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<ArticleDetails> ArticleDetails { get; set; }
@@ -34,6 +35,8 @@ namespace ECommerceDbContext
         public DbSet<Customer> Customers { get; set; }
        
         public DbSet<Vat> Vats { get; set; }
+
+         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Write Fluent API configurations here
@@ -69,12 +72,16 @@ namespace ECommerceDbContext
                         .IsRequired()
                         .HasMaxLength(900);
 
-                //one to one Relationship ArticleDetails with Pricing
-              /*   modelBuilder.Entity<ArticleDetails>()
-               .HasOne<Pricing>(s => s.Pricing)
-               .WithOne(ad => ad.ArticleDetails)
-               .HasForeignKey<Pricing>(ad => ad.ArticleDetails_Id);*/
-    
+            modelBuilder.Entity<ArticleDetails>()
+                        .Property(c => c.ArticleMasterImage)
+                        .IsRequired();
+
+            //one to one Relationship ArticleDetails with Pricing
+            /*   modelBuilder.Entity<ArticleDetails>()
+             .HasOne<Pricing>(s => s.Pricing)
+             .WithOne(ad => ad.ArticleDetails)
+             .HasForeignKey<Pricing>(ad => ad.ArticleDetails_Id);*/
+
             //ArticleImageVarient
             modelBuilder.Entity<ArticleImageVarient>()
                         .HasKey(c => c.Img_Id);
@@ -235,5 +242,13 @@ namespace ECommerceDbContext
 
 
         }
+
+       /* protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("User ID=sa;password=sa9;Initial Catalog=E-CommerceAppDb;Data Source=192.168.5.17,1555;Persist Security Info=False;Connection Timeout=1000;");
+
+        }*/
+
+
     }
 }

@@ -21,6 +21,7 @@ namespace ShopModels.Models
         public string Description { get; set; }
         public int Brand_Id { get; set; }
         public int Vat_Id { get; set; }
+        public string ArticleMasterImage { get; set; }
         public virtual ICollection<ArticleImageVarient> ArticleImageVarients { get; set; }
         public virtual ICollection<ArticleVariant> ArticleVariants { get; set; }
     }

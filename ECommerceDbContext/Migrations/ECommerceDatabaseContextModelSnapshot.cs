@@ -26,6 +26,10 @@ namespace ECommerceDbContext.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ArticleMasterImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ArticleSubtitle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
