@@ -31,6 +31,7 @@ namespace E_CommerceApp.Controllers
                           
                          select new
                          {
+                             ArticleTitle = data.ArticleTitle,
                              ArticleSubtitle = data.ArticleSubtitle,
                              ArticleMasterImage = data.ArticleMasterImage,
                              StandardPrice = pdata.StandardPrice

@@ -1,0 +1,15 @@
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\Services.deps.json
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\Services.dll
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\Services.pdb
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\CommonUnitOfWork.dll
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\Repository.dll
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\ShopModels.dll
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\CommonUnitOfWork.pdb
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\ShopModels.pdb
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.csprojAssemblyReference.cache
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.AssemblyInfoInputs.cache
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.AssemblyInfo.cs
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.csproj.CopyComplete
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.dll
+E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.pdb
