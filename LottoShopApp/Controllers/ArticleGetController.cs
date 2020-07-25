@@ -22,21 +22,67 @@ namespace E_CommerceApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllArticleDetails() 
+        public IActionResult GetAllArticleDetails()
         {
 
             var result = from data in _db.ArticleDetails
                          join pdata in _db.Pricings
                          on data.ArtD_Id equals pdata.ArticleDetails_Id
-                          
+
                          select new
                          {
+                             ArticleId = data.ArtD_Id,
                              ArticleTitle = data.ArticleTitle,
                              ArticleSubtitle = data.ArticleSubtitle,
                              ArticleMasterImage = data.ArticleMasterImage,
-                             StandardPrice = pdata.StandardPrice
+                             Description = data.Description,
+                             StandardPrice = pdata.StandardPrice,
+                             DiscountPrice = pdata.DiscontPrice,
+                             DiscountRate = pdata.DiscountRate
 
                          };
+
+
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+
+        public IActionResult GetArticleImageListByID(int id)
+        {
+
+            var result = _db.ArticleDetails
+                         .Where(c => c.ArtD_Id == id)
+                         .SelectMany(c => c.ArticleImageVarients);
+
+
+
+
+
+
+
+
+
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+
+        public IActionResult GetArticleVarianListByID(int id)
+        {
+
+            var result = _db.ArticleDetails
+                         .Where(c => c.ArtD_Id == id)
+                         .SelectMany(c => c.ArticleVariants);
+
+
+
+
+
+
+
 
 
 

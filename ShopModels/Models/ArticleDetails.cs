@@ -11,6 +11,9 @@ namespace ShopModels.Models
             
             ArticleImageVarients = new HashSet<ArticleImageVarient>();
             ArticleVariants = new HashSet<ArticleVariant>();
+
+            ArticleImageVarient articleImage = new ArticleImageVarient();
+            ArticleVariant articleVariant = new ArticleVariant();
         }
         public int ArtD_Id { get; set; }
    
