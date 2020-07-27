@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ShopModels.Models
+namespace ShopModels.ViewModel
 {
-    public class TestClass1
+    public class TestClass
     {
-        
         public int ArticleDetails_Id { get; set; }
         public string Address { get; set; }
-        public string  Name { get; set; }
+        public string Name { get; set; }
     }
 }

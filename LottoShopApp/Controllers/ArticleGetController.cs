@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ShopModels.Models;
+using ShopModels.ViewModel;
 
 namespace E_CommerceApp.Controllers
 {
@@ -87,6 +89,17 @@ namespace E_CommerceApp.Controllers
 
 
             return Ok(result);
+        }
+
+        [HttpPost]
+
+        public IActionResult PostData(TestClass1 model)
+        {
+
+            _db.TestClass1s.Add(model);
+
+            return Ok(_db.SaveChanges());
+            
         }
     }
 }
