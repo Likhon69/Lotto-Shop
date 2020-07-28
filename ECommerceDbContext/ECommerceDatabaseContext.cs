@@ -42,6 +42,9 @@ namespace ECommerceDbContext
             //Write Fluent API configurations here
 
             //Property Configurations
+            //TestClass1
+            modelBuilder.Entity<TestClass1>()
+                        .HasKey(c => c.Id);
             //Category
             modelBuilder.Entity<Category>()
                     .HasKey(c => c.C_Id);
