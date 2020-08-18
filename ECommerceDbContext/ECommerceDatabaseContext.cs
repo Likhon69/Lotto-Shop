@@ -75,9 +75,7 @@ namespace ECommerceDbContext
                         .IsRequired()
                         .HasMaxLength(900);
 
-            modelBuilder.Entity<ArticleDetails>()
-                        .Property(c => c.ArticleMasterImage)
-                        .IsRequired();
+          
 
             //one to one Relationship ArticleDetails with Pricing
             /*   modelBuilder.Entity<ArticleDetails>()

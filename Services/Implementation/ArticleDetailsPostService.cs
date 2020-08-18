@@ -36,7 +36,7 @@ namespace Services.Implementation
                     {
                         string finalImage = "";
                         int pos = 12;
-                        if (pos >= 0)
+                        if (pos != 0)
                         {
                             // String after founder  
                             string afterFounder = Image.ImageName.Remove(pos);
@@ -45,8 +45,8 @@ namespace Services.Implementation
                             string beforeFounder = Image.ImageName.Remove(0, pos);
                             finalImage = beforeFounder;
 
-
                         }
+                        
                         Image.ImageName = finalImage;
                         dataArt.ArticleImageVarients.Add(Image);
                     }

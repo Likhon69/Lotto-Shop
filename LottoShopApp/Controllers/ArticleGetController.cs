@@ -40,7 +40,8 @@ namespace E_CommerceApp.Controllers
                              Description = data.Description,
                              StandardPrice = pdata.StandardPrice,
                              DiscountPrice = pdata.DiscontPrice,
-                             DiscountRate = pdata.DiscountRate
+                             DiscountRate = pdata.DiscountRate,
+                             Quantity = data.Quantity
 
                          };
 
