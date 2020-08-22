@@ -160,8 +160,6 @@ E:\Project\LottoShop\LottoShopApp\bin\Release\netcoreapp3.1\ShopModels.pdb
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.csprojAssemblyReference.cache
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\staticwebassets\LottoShopApp.StaticWebAssets.Manifest.cache
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\staticwebassets\LottoShopApp.StaticWebAssets.xml
-E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.MvcApplicationPartsAssemblyInfo.cs
-E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.MvcApplicationPartsAssemblyInfo.cache
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.RazorAssemblyInfo.cache
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.RazorAssemblyInfo.cs
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.AssemblyInfoInputs.cache
@@ -182,3 +180,8 @@ E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.Views.p
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.csproj.CopyComplete
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.dll
 E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.pdb
+E:\Project\LottoShop\LottoShopApp\bin\Release\netcoreapp3.1\System.Data.SqlClient.dll
+E:\Project\LottoShop\LottoShopApp\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Project\LottoShop\LottoShopApp\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.MvcApplicationPartsAssemblyInfo.cs
+E:\Project\LottoShop\LottoShopApp\obj\Release\netcoreapp3.1\LottoShopApp.MvcApplicationPartsAssemblyInfo.cache

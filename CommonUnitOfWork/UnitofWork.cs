@@ -77,5 +77,7 @@ namespace CommonUnitOfWork
         public IArticleVariantPostRepository ArticleVariant => _articleVariantPostRepository ?? new ArticleVariantPostRepository(_context);
         private IPricingPostRepository _pricingPostRepository;
         public IPricingPostRepository Pricing => _pricingPostRepository ?? new PricingPostRepository(_context);
+        private IPricingPostRepository _pricingGetRepository;
+        public IPricingPostRepository GetProcedure => _pricingGetRepository?? new PricingPostRepository(_context);
     }
 }

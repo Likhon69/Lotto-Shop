@@ -12,6 +12,7 @@ namespace CommonUnitOfWork
         IArticleImageVariantPostRepository ArticleImageVariant { get; }
         IArticleVariantPostRepository ArticleVariant { get; }
         IPricingPostRepository Pricing { get; }
+        IPricingPostRepository GetProcedure { get; }
         int Commit();
     }
 }

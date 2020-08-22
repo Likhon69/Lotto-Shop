@@ -1,8 +1,8 @@
 E:\Project\LottoShop\ShopModels\bin\Release\netcoreapp3.1\ShopModels.deps.json
 E:\Project\LottoShop\ShopModels\bin\Release\netcoreapp3.1\ShopModels.dll
 E:\Project\LottoShop\ShopModels\bin\Release\netcoreapp3.1\ShopModels.pdb
-E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.csprojAssemblyReference.cache
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.AssemblyInfoInputs.cache
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.AssemblyInfo.cs
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.dll
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.pdb
+E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.csprojAssemblyReference.cache

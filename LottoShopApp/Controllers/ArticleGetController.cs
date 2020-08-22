@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Services.Contracts;
 using ShopModels.Models;
 using ShopModels.ViewModel;
 
@@ -17,10 +18,13 @@ namespace E_CommerceApp.Controllers
     [EnableCors("CorsPolicy")]
     public class ArticleGetController : ControllerBase
     {
+      
+        private readonly IGetProcedure _getProcedure;
         private readonly ECommerceDatabaseContext _db;
-        public ArticleGetController(ECommerceDatabaseContext db)
+        public ArticleGetController(ECommerceDatabaseContext db, IGetProcedure getProcedure)
         {
             _db = db;
+            _getProcedure = getProcedure;
         }
 
         [HttpGet]
@@ -44,6 +48,8 @@ namespace E_CommerceApp.Controllers
                              Quantity = data.Quantity
 
                          };
+
+
 
 
 
@@ -101,6 +107,12 @@ namespace E_CommerceApp.Controllers
 
             return Ok(_db.SaveChanges());
             
+        }
+
+        [HttpGet]
+        public IActionResult GetProcedureData()
+        {
+            return Ok(_getProcedure.articleDetailsManager());
         }
     }
 }
