@@ -77,6 +77,8 @@ namespace E_CommerceApp
             services.AddTransient<IPricingPostRepository, PricingPostRepository>();
             services.AddTransient<ITokenEcommerceAuthentication, TokenEcommerceAuthentication>();
             services.AddTransient<IGetProcedure, GetProcedure>();
+            services.AddTransient<IGetAllArticleRepository, GetAllArticleDetailsRepository>();
+            services.AddTransient<IGetAllArticleDetailsManager, GetAllArtilceDetailsManager>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

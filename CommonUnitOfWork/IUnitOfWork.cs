@@ -13,6 +13,7 @@ namespace CommonUnitOfWork
         IArticleVariantPostRepository ArticleVariant { get; }
         IPricingPostRepository Pricing { get; }
         IPricingPostRepository GetProcedure { get; }
+        IGetAllArticleRepository EGetAllArticle { get; }
         int Commit();
     }
 }

@@ -20,11 +20,13 @@ namespace E_CommerceApp.Controllers
     {
       
         private readonly IGetProcedure _getProcedure;
+        private readonly IGetAllArticleDetailsManager _getAllArticleDetailsManager;
         private readonly ECommerceDatabaseContext _db;
-        public ArticleGetController(ECommerceDatabaseContext db, IGetProcedure getProcedure)
+        public ArticleGetController(ECommerceDatabaseContext db, IGetProcedure getProcedure, IGetAllArticleDetailsManager getAllArticleDetailsManager)
         {
             _db = db;
             _getProcedure = getProcedure;
+            _getAllArticleDetailsManager = getAllArticleDetailsManager;
         }
 
         [HttpGet]
@@ -113,6 +115,12 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetProcedureData()
         {
             return Ok(_getProcedure.articleDetailsManager());
+        }
+
+        [HttpGet]
+        public IActionResult EGetAllArticleDetails()
+        {
+            return Ok(_getAllArticleDetailsManager.GetEArticleDetails());
         }
     }
 }
