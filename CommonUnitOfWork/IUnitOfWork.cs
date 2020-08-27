@@ -14,6 +14,7 @@ namespace CommonUnitOfWork
         IPricingPostRepository Pricing { get; }
         IPricingPostRepository GetProcedure { get; }
         IGetAllArticleRepository EGetAllArticle { get; }
+        IPostArticleImageRepository PostEArticleImage { get; }
         int Commit();
     }
 }

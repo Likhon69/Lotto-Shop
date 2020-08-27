@@ -79,6 +79,8 @@ namespace E_CommerceApp
             services.AddTransient<IGetProcedure, GetProcedure>();
             services.AddTransient<IGetAllArticleRepository, GetAllArticleDetailsRepository>();
             services.AddTransient<IGetAllArticleDetailsManager, GetAllArtilceDetailsManager>();
+            services.AddTransient<IPostArticleImageManager, PostArticleImageManager>();
+            services.AddTransient<IPostArticleImageRepository, PostArticleImageRepository>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

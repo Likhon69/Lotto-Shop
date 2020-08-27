@@ -59,13 +59,22 @@ namespace E_CommerceApp.Controllers
                     }
                     string path = Path.Combine(physicalPath, fileName);
                     var stream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite);
-                    file.CopyTo(stream);
-                    stream.Close();
-                    stream.Dispose();
-                    var webPath = folder;
+                    if (System.IO.File.Exists(stream.Name))
+                    {
+                        file.CopyTo(stream);
+                        stream.Close();
+                        stream.Dispose();
+                        var webPath = folder;
 
 
-                    return Ok(path);
+                        return Ok(path);
+                    }
+                    else
+                    {
+                        return BadRequest();
+                    }
+                    
+                  
 
                 }
                 else

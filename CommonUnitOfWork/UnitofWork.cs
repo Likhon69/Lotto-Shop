@@ -82,5 +82,8 @@ namespace CommonUnitOfWork
 
         private IGetAllArticleRepository _getAllArticleRepository;
         public IGetAllArticleRepository EGetAllArticle => _getAllArticleRepository ?? new GetAllArticleDetailsRepository();
+
+        private IPostArticleImageRepository _postArticleImageRepository;
+        public IPostArticleImageRepository PostEArticleImage => _postArticleImageRepository ?? new PostArticleImageRepository();
     }
 }
