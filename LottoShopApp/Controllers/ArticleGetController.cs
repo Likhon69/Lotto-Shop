@@ -21,12 +21,20 @@ namespace E_CommerceApp.Controllers
       
         private readonly IGetProcedure _getProcedure;
         private readonly IGetAllArticleDetailsManager _getAllArticleDetailsManager;
+        private readonly IGetDistrictMasterManager _getDistrictMasterManager;
+        private readonly IGetDistrictAreaByDistrictIdManager _getDistrictAreaByDistrictIdManager;
         private readonly ECommerceDatabaseContext _db;
-        public ArticleGetController(ECommerceDatabaseContext db, IGetProcedure getProcedure, IGetAllArticleDetailsManager getAllArticleDetailsManager)
+        public ArticleGetController(ECommerceDatabaseContext db, 
+            IGetProcedure getProcedure, 
+            IGetAllArticleDetailsManager getAllArticleDetailsManager, 
+            IGetDistrictMasterManager getDistrictMasterManager, 
+            IGetDistrictAreaByDistrictIdManager getDistrictAreaByDistrictIdManager)
         {
             _db = db;
             _getProcedure = getProcedure;
             _getAllArticleDetailsManager = getAllArticleDetailsManager;
+            _getDistrictMasterManager = getDistrictMasterManager;
+            _getDistrictAreaByDistrictIdManager = getDistrictAreaByDistrictIdManager;
         }
 
         [HttpGet]
@@ -120,7 +128,21 @@ namespace E_CommerceApp.Controllers
         [HttpGet]
         public IActionResult EGetAllArticleDetails()
         {
+
             return Ok(_getAllArticleDetailsManager.GetEArticleDetails());
+        }
+        [HttpGet]
+        public IActionResult GetAllDistrictMaster()
+        {
+            var result = _getDistrictMasterManager.GetDistrictMaster();
+
+            return Ok(result);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetDistrictMasterById(int id)
+        {
+            var result = _getDistrictAreaByDistrictIdManager.GetDistrictAreaById(id);
+            return Ok(result);
         }
     }
 }

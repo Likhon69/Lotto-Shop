@@ -48,6 +48,7 @@ namespace E_CommerceApp
             services.AddDbContext<ECommerceDatabaseContext>(config =>
             {
                 config.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
+                
             });
           
             services.Configure<FormOptions>(config =>
@@ -81,6 +82,10 @@ namespace E_CommerceApp
             services.AddTransient<IGetAllArticleDetailsManager, GetAllArtilceDetailsManager>();
             services.AddTransient<IPostArticleImageManager, PostArticleImageManager>();
             services.AddTransient<IPostArticleImageRepository, PostArticleImageRepository>();
+            services.AddTransient<IGetDistrictMasterRepository, GetDistrictMasterRepository>();
+            services.AddTransient<IGetDistrictMasterManager, GetDistrictMasterManager>();
+            services.AddTransient<IGetDistrictAreaByDistrictIdRepository, GetDistrictAreaByDistrictIdRepository>();
+            services.AddTransient<IGetDistrictAreaByDistrictIdManager, GetDistrictAreaByDistrictIdManager>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

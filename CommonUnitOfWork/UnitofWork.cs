@@ -85,5 +85,9 @@ namespace CommonUnitOfWork
 
         private IPostArticleImageRepository _postArticleImageRepository;
         public IPostArticleImageRepository PostEArticleImage => _postArticleImageRepository ?? new PostArticleImageRepository();
+        private IGetDistrictMasterRepository _getDistrictMasterRepository;
+        public IGetDistrictMasterRepository GetAllDistrictMaster => _getDistrictMasterRepository??new GetDistrictMasterRepository();
+        private IGetDistrictAreaByDistrictIdRepository _getDistrictAreaByDistrictRepository;
+        public IGetDistrictAreaByDistrictIdRepository GetDistrictArea => _getDistrictAreaByDistrictRepository ?? new GetDistrictAreaByDistrictIdRepository();
     }
 }

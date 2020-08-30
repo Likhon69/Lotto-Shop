@@ -15,6 +15,8 @@ namespace CommonUnitOfWork
         IPricingPostRepository GetProcedure { get; }
         IGetAllArticleRepository EGetAllArticle { get; }
         IPostArticleImageRepository PostEArticleImage { get; }
+        IGetDistrictMasterRepository GetAllDistrictMaster { get; }
+        IGetDistrictAreaByDistrictIdRepository GetDistrictArea { get; }
         int Commit();
     }
 }
