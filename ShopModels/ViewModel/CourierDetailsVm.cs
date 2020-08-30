@@ -6,10 +6,13 @@ namespace ShopModels.ViewModel
 {
     public class CourierDetailsVm
     {
-        public string courierName { get; set; }
+        public int company_Id { get; set; }
+        public string companyName { get; set; }
         public string email { get; set; }
         public string website { get; set; }
-        public string Description { get; set; }
+        public string phone { get; set; }
+        public string contactPerson { get; set; }
+        public string Remarks { get; set; }
         public string status { get; set; }
     }
 }

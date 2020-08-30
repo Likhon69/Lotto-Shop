@@ -21,12 +21,17 @@ namespace E_CommerceApp.Controllers
         private readonly ECommerceDatabaseContext _db;
         private IArticleDetailsPostService _services;
         private IPostArticleImageManager _postArticleImageManager;
+        private ICourierMasterPostManager _courierMasterPostManager;
 
-        public ArticleSettingsController(ECommerceDatabaseContext db, IArticleDetailsPostService services, IPostArticleImageManager postArticleImageManager)
+        public ArticleSettingsController(ECommerceDatabaseContext db, 
+            IArticleDetailsPostService services, 
+            IPostArticleImageManager postArticleImageManager, 
+            ICourierMasterPostManager courierMasterPostManager)
         {
             _db = db;
             _services = services;
             _postArticleImageManager = postArticleImageManager;
+            _courierMasterPostManager = courierMasterPostManager;
         }
         [HttpGet]
         public IActionResult GetCategorys()
@@ -88,8 +93,8 @@ namespace E_CommerceApp.Controllers
         [HttpPost]
         public IActionResult PostCourierMaster(CourierMasterVm model)
         {
-            var res = "jhbdsffdh";
-            return Ok();
+            var res = _courierMasterPostManager.CourierMasterPost(model);
+            return Ok(res);
 
         }
     }

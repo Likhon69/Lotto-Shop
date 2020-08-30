@@ -89,5 +89,11 @@ namespace CommonUnitOfWork
         public IGetDistrictMasterRepository GetAllDistrictMaster => _getDistrictMasterRepository??new GetDistrictMasterRepository();
         private IGetDistrictAreaByDistrictIdRepository _getDistrictAreaByDistrictRepository;
         public IGetDistrictAreaByDistrictIdRepository GetDistrictArea => _getDistrictAreaByDistrictRepository ?? new GetDistrictAreaByDistrictIdRepository();
+
+        private ICourierMasterPostRepository _courierMasterPostRepository;
+        public ICourierMasterPostRepository PostCourierMaster => _courierMasterPostRepository ?? new CourierMasterPostRepository(_context);
+
+        private IGetCourierCompnayListRepository _getCourierCompnayListRepository;
+        public IGetCourierCompnayListRepository GetCourierCompanyList => _getCourierCompnayListRepository ?? new GetCourierCompnayListRepository();
     }
 }

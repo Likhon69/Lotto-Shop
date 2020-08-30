@@ -24,17 +24,20 @@ namespace E_CommerceApp.Controllers
         private readonly IGetDistrictMasterManager _getDistrictMasterManager;
         private readonly IGetDistrictAreaByDistrictIdManager _getDistrictAreaByDistrictIdManager;
         private readonly ECommerceDatabaseContext _db;
+        private readonly IGetCourierCompanyListManager _getCourierCompanyListManager;
         public ArticleGetController(ECommerceDatabaseContext db, 
             IGetProcedure getProcedure, 
             IGetAllArticleDetailsManager getAllArticleDetailsManager, 
             IGetDistrictMasterManager getDistrictMasterManager, 
-            IGetDistrictAreaByDistrictIdManager getDistrictAreaByDistrictIdManager)
+            IGetDistrictAreaByDistrictIdManager getDistrictAreaByDistrictIdManager,
+             IGetCourierCompanyListManager getCourierCompanyListManager)
         {
             _db = db;
             _getProcedure = getProcedure;
             _getAllArticleDetailsManager = getAllArticleDetailsManager;
             _getDistrictMasterManager = getDistrictMasterManager;
             _getDistrictAreaByDistrictIdManager = getDistrictAreaByDistrictIdManager;
+            _getCourierCompanyListManager = getCourierCompanyListManager;
         }
 
         [HttpGet]
@@ -142,6 +145,13 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetDistrictMasterById(int id)
         {
             var result = _getDistrictAreaByDistrictIdManager.GetDistrictAreaById(id);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public IActionResult GetCourierDetailsList()
+        {
+            var result = _getCourierCompanyListManager.GetCourierCompanyList();
             return Ok(result);
         }
     }

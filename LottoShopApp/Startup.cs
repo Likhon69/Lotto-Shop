@@ -86,6 +86,10 @@ namespace E_CommerceApp
             services.AddTransient<IGetDistrictMasterManager, GetDistrictMasterManager>();
             services.AddTransient<IGetDistrictAreaByDistrictIdRepository, GetDistrictAreaByDistrictIdRepository>();
             services.AddTransient<IGetDistrictAreaByDistrictIdManager, GetDistrictAreaByDistrictIdManager>();
+            services.AddTransient<ICourierMasterPostRepository, CourierMasterPostRepository>();
+            services.AddTransient<ICourierMasterPostManager, CourierMasterPostManager>();
+            services.AddTransient<IGetCourierCompnayListRepository, GetCourierCompnayListRepository>();
+            services.AddTransient<IGetCourierCompanyListManager, GetCourierCompanyListManager>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

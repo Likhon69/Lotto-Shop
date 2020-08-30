@@ -55,7 +55,7 @@ namespace Repository.Implementation
                 return dt;
 
             }
-            throw new NotImplementedException();
+          
         }
     }
 }

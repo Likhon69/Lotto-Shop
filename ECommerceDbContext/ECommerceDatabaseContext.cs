@@ -35,11 +35,48 @@ namespace ECommerceDbContext
         public DbSet<Customer> Customers { get; set; }
        
         public DbSet<Vat> Vats { get; set; }
+        public DbSet<CourierCompanyMaster> courierCompanyMasters { get; set; }
+        public DbSet<CourierContactPerson> courierContactPersons { get; set; }
 
-         
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Write Fluent API configurations here
+            //CourierCompanyMaster
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .HasKey(c => c.company_Id);
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.companyName)
+                        .IsRequired();
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.contactPerson)
+                        .IsRequired();
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.Email)
+                        .IsRequired();
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.Phone)
+                        .IsRequired();
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.website)
+                        .IsRequired();
+            modelBuilder.Entity<CourierCompanyMaster>()
+                        .Property(c => c.Remarks)
+                        .IsRequired()
+                        .HasMaxLength(600);
+            //CourierContactPerson
+            modelBuilder.Entity<CourierContactPerson>()
+                        .HasKey(c => c.person_Id);
+            modelBuilder.Entity<CourierContactPerson>()
+                        .Property(c => c.personName)
+                        .IsRequired();
+            modelBuilder.Entity<CourierContactPerson>()
+                        .Property(c => c.phone1)
+                        .IsRequired();
+            modelBuilder.Entity<CourierContactPerson>()
+                        .Property(c => c.phone2)
+                        .IsRequired();
+           
 
             //Property Configurations
             //TestClass1

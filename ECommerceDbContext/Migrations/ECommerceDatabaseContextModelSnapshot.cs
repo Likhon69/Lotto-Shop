@@ -171,6 +171,90 @@ namespace ECommerceDbContext.Migrations
                     b.ToTable("Categorys");
                 });
 
+            modelBuilder.Entity("ShopModels.Models.CourierCompanyMaster", b =>
+                {
+                    b.Property<int>("company_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remarks")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(600)")
+                        .HasMaxLength(600);
+
+                    b.Property<string>("companyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("contactPerson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("created_At")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("created_By")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("website")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("company_Id");
+
+                    b.ToTable("courierCompanyMasters");
+                });
+
+            modelBuilder.Entity("ShopModels.Models.CourierContactPerson", b =>
+                {
+                    b.Property<int>("person_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CourierCompanyMastercompany_Id")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created_At")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("created_By")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("personName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phone1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phone2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("person_Id");
+
+                    b.HasIndex("CourierCompanyMastercompany_Id");
+
+                    b.ToTable("courierContactPersons");
+                });
+
             modelBuilder.Entity("ShopModels.Models.CustomerInstallationInfo", b =>
                 {
                     b.Property<int>("CusPIn_Id")
@@ -543,6 +627,13 @@ namespace ECommerceDbContext.Migrations
                     b.HasOne("ShopModels.Models.ArticleDetails", null)
                         .WithMany("ArticleVariants")
                         .HasForeignKey("ArticleDetailsArtD_Id");
+                });
+
+            modelBuilder.Entity("ShopModels.Models.CourierContactPerson", b =>
+                {
+                    b.HasOne("ShopModels.Models.CourierCompanyMaster", null)
+                        .WithMany("CourierContactPersons")
+                        .HasForeignKey("CourierCompanyMastercompany_Id");
                 });
 
             modelBuilder.Entity("ShopModels.Models.CustomerProfileInfo", b =>

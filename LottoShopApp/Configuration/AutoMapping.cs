@@ -19,6 +19,10 @@ namespace E_CommerceApp.Configuration
 
             CreateMap<Pricing, ArticleDetailsData>();
             CreateMap<ArticleDetailsData, Pricing>();
+            CreateMap<CourierCompanyMaster, CourierDetailsVm>();
+            CreateMap<CourierDetailsVm, CourierCompanyMaster>();
+            CreateMap<CourierContactPerson, ContactPersonVm>();
+            CreateMap<ContactPersonVm, CourierContactPerson>();
         }
     }
 }

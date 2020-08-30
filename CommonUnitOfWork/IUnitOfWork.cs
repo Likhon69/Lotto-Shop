@@ -17,6 +17,8 @@ namespace CommonUnitOfWork
         IPostArticleImageRepository PostEArticleImage { get; }
         IGetDistrictMasterRepository GetAllDistrictMaster { get; }
         IGetDistrictAreaByDistrictIdRepository GetDistrictArea { get; }
+        ICourierMasterPostRepository PostCourierMaster { get; }
+        IGetCourierCompnayListRepository GetCourierCompanyList { get; }
         int Commit();
     }
 }
