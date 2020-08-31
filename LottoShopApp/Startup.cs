@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CommonUnitOfWork;
 using ECommerceDbContext;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -48,8 +49,10 @@ namespace E_CommerceApp
             services.AddDbContext<ECommerceDatabaseContext>(config =>
             {
                 config.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
+             
                 
             });
+           
           
             services.Configure<FormOptions>(config =>
             {

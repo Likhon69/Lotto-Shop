@@ -13,6 +13,7 @@ namespace ShopModels.ViewModel
         public string phone { get; set; }
         public string contactPerson { get; set; }
         public string Remarks { get; set; }
+        public string createdBy { get; set; }
         public string status { get; set; }
     }
 }

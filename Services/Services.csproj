@@ -9,6 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonUnitOfWork\CommonUnitOfWork.csproj" />
+    <ProjectReference Include="..\ECommerceDbContext\ECommerceDbContext.csproj" />
     <ProjectReference Include="..\ShopModels\ShopModels.csproj" />
   </ItemGroup>
 

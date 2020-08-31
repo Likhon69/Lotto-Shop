@@ -13,3 +13,5 @@ E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.AssemblyInfo.cs
 E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.csproj.CopyComplete
 E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.dll
 E:\Project\LottoShop\Services\obj\Release\netcoreapp3.1\Services.pdb
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\ECommerceDbContext.dll
+E:\Project\LottoShop\Services\bin\Release\netcoreapp3.1\ECommerceDbContext.pdb

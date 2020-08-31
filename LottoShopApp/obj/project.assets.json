@@ -3077,6 +3077,7 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "CommonUnitOfWork": "1.0.0",
+          "ECommerceDbContext": "1.0.0",
           "ShopModels": "1.0.0"
         },
         "compile": {

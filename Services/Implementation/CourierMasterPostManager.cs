@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CommonUnitOfWork;
+
 using Services.Contracts;
 using ShopModels.Models;
 using ShopModels.ViewModel;
@@ -21,25 +22,19 @@ namespace Services.Implementation
             _mapper = mapper;
 
         }
-        public bool CourierMasterPost(CourierMasterVm model)
+        public int CourierMasterPost(CourierMasterVm model)
         {
             var courierMasterData = model.CourierDetails;
-            var dataCourier = _mapper.Map<CourierCompanyMaster>(courierMasterData);
-            string res = " ";
+
+            int result = 0;
             try
             {
-                if (dataCourier.company_Id == 0)
+                foreach(var courierMaster in model.ContactPersonList)
                 {
-                    _unitOfWork.PostCourierMaster.Add(dataCourier);
-
-                    foreach(var person in model.ContactPersonList)
-                    {
-                        var personData = _mapper.Map<CourierContactPerson>(person);
-                        dataCourier.CourierContactPersons.Add(personData);
-                    }
+                  var res  = _unitOfWork.PostCourierMaster.PostCourierMaster(model.CourierDetails, courierMaster);
+                    result = res;
                 }
-                _unitOfWork.Commit();
-                return true;
+                return result;
             }
             catch (Exception ex)
             {

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using E_CommerceApp.Models;
+
 using ShopModels.Models;
 using ShopModels.ViewModel;
 using System;
@@ -23,6 +23,10 @@ namespace E_CommerceApp.Configuration
             CreateMap<CourierDetailsVm, CourierCompanyMaster>();
             CreateMap<CourierContactPerson, ContactPersonVm>();
             CreateMap<ContactPersonVm, CourierContactPerson>();
+           /* CreateMap<CourierCompanyMasters, CourierDetailsVm>();
+            CreateMap<CourierDetailsVm, CourierCompanyMasters>();
+            CreateMap<CourierContactPersons, ContactPersonVm>();
+            CreateMap<ContactPersonVm, CourierContactPersons>();*/
         }
     }
 }

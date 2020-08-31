@@ -7,6 +7,6 @@ namespace Services.Contracts
 {
     public interface ICourierMasterPostManager
     {
-        bool CourierMasterPost(CourierMasterVm model);
+       int CourierMasterPost(CourierMasterVm model);
     }
 }
