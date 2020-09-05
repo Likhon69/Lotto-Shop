@@ -1,4 +1,6 @@
 ﻿using ECommerceDbContext;
+
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.IdentityModel.Tokens;
 using ShopModels.ViewModel;
 using System;
@@ -13,19 +15,21 @@ namespace UserManagement.Implementation
 {
     public class TokenEcommerceAuthentication : ITokenEcommerceAuthentication
     {
-        private readonly ECommerceDatabaseContext _db;
-        public TokenEcommerceAuthentication(ECommerceDatabaseContext db)
+      
+        private readonly ECOMDBContext _dbEcom;
+        public TokenEcommerceAuthentication( ECOMDBContext dbEcom)
         {
-            _db = db;
+     
+            _dbEcom = dbEcom;
         }
         public string Authentication(UserDto model)
         {
-            var user = _db.Users.FirstOrDefault(c => c.Email == model.Email && c.Password == model.Password);
+            var user = _dbEcom.Users.FirstOrDefault(c => c.Email == model.Email && c.Password == model.Password);
             if (user != null)
             {
                 var claim = new[]
                 {
-                    new Claim(ClaimTypes.Name,user.User_Id.ToString())
+                    new Claim(ClaimTypes.Name,user.UserId.ToString())
                 };
 
                 var secretByte = Encoding.UTF8.GetBytes(Constants.Secret);

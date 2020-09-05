@@ -5,6 +5,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web.Http.Description;
 using ECommerceDbContext;
+
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -24,11 +26,13 @@ namespace E_CommerceApp.Controllers
     {
 
         private readonly ITokenEcommerceAuthentication _tokenEcommerceAuthentication;
-        private readonly ECommerceDatabaseContext _db;
-        public OAuthController(ITokenEcommerceAuthentication tokenEcommerceAuthentication, ECommerceDatabaseContext db)
+        private readonly ECOMDBContext _db;
+        public OAuthController(ITokenEcommerceAuthentication tokenEcommerceAuthentication, ECOMDBContext db)
         {
             _tokenEcommerceAuthentication = tokenEcommerceAuthentication;
             _db = db;
+
+
         }
         
         [Authorize]
@@ -75,7 +79,7 @@ namespace E_CommerceApp.Controllers
             }
         }
 
-        [HttpPost]
+       /* [HttpPost]
         public IActionResult PostTest(TestClass1 model)
         {
             if (ModelState.IsValid)
@@ -98,7 +102,7 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetCustomers()
         {
             return Ok(_db.Customers);
-        }
+        }*/
         
 
        

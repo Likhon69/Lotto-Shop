@@ -1,4 +1,5 @@
 ﻿using ECommerceDbContext;
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -22,19 +23,20 @@ namespace UserManagement.Implementation
         }
         public class CustomauthenticationHandler : AuthenticationHandler<BasicAuthenticationSchemeOptions>
         {
-            private readonly ECommerceDatabaseContext _db;
+            private readonly ECOMDBContext _db;
             public CustomauthenticationHandler(
                 IOptionsMonitor<BasicAuthenticationSchemeOptions> options,
                 ILoggerFactory logger,
                 UrlEncoder encoder,
                 ISystemClock clock,
-                ECommerceDatabaseContext db
+                ECOMDBContext db
                 ) : base(options, logger, encoder, clock)
             {
                 _db = db;
             }
             protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
             {
+                string res = "";
                 if (!Request.Headers.ContainsKey("Authorization"))
                     return AuthenticateResult.Fail("UnAuthorized");
                 string authorization = Request.Headers["Authorization"];
@@ -61,6 +63,7 @@ namespace UserManagement.Implementation
                 }
                 catch (Exception ex)
                 {
+                    res = ex.Message;
 
                     return AuthenticateResult.Fail(ex.Message);
                 }
@@ -69,11 +72,11 @@ namespace UserManagement.Implementation
             private AuthenticateResult TokenValidate(string userId)
             {
                 var id = Int32.Parse(userId);
-                var user = _db.Users.Find(id);
+                var user = _db.Users.FirstOrDefault(c => c.UserId == id);
 
                 var claim = new List<Claim>{
                 new Claim(ClaimTypes.Name,user.UserName)
-            };
+                   };
                 var identity = new ClaimsIdentity(claim, Scheme.Name);
                 var principal = new GenericPrincipal(identity, null);
                 var ticket = new AuthenticationTicket(principal, Scheme.Name);

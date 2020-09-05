@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using ECommerceDbContext;
-
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +19,15 @@ namespace E_CommerceApp.Controllers
     [EnableCors("CorsPolicy")]
     public class ArticleSettingsController : ControllerBase
     {
-      
-        private readonly ECommerceDatabaseContext _db;
-    
+
+        private readonly ECOMDBContext _db;
+
         private IArticleDetailsPostService _services;
         private IPostArticleImageManager _postArticleImageManager;
         private ICourierMasterPostManager _courierMasterPostManager;
         private readonly IMapper _mapper;
 
-        public ArticleSettingsController(ECommerceDatabaseContext db, 
+        public ArticleSettingsController(ECOMDBContext db, 
             IArticleDetailsPostService services, 
             IPostArticleImageManager postArticleImageManager, 
             ICourierMasterPostManager courierMasterPostManager,
@@ -41,7 +41,7 @@ namespace E_CommerceApp.Controllers
            
             _mapper = mapper;
         }
-        [HttpGet]
+       /* [HttpGet]
         public IActionResult GetCategorys()
         {
             return Ok(_db.Categorys);
@@ -61,7 +61,7 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetVat()
         {
             return Ok(_db.Vats);
-        }
+        }*/
 
         [HttpPost]
         public IActionResult GetAllArticleData(ArticleDetailsDto model)

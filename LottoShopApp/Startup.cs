@@ -7,6 +7,7 @@ using AutoMapper;
 using CommonUnitOfWork;
 using ECommerceDbContext;
 
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -45,8 +46,9 @@ namespace E_CommerceApp
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
             });
-            services.AddTransient<DbContext, ECommerceDatabaseContext>();
-            services.AddDbContext<ECommerceDatabaseContext>(config =>
+         
+            services.AddTransient<DbContext, ECOMDBContext>();
+            services.AddDbContext<ECOMDBContext>(config =>
             {
                 config.UseSqlServer(Configuration.GetConnectionString("SqlConnection"));
              
