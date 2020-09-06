@@ -9,3 +9,5 @@ E:\Project\LottoShop\Repository\obj\Release\netcoreapp3.1\Repository.AssemblyInf
 E:\Project\LottoShop\Repository\obj\Release\netcoreapp3.1\Repository.csproj.CopyComplete
 E:\Project\LottoShop\Repository\obj\Release\netcoreapp3.1\Repository.dll
 E:\Project\LottoShop\Repository\obj\Release\netcoreapp3.1\Repository.pdb
+E:\Project\LottoShop\Repository\bin\Release\netcoreapp3.1\ECommerceDbContext.dll
+E:\Project\LottoShop\Repository\bin\Release\netcoreapp3.1\ECommerceDbContext.pdb

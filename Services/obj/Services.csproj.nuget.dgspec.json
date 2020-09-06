@@ -186,6 +186,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
+                "projectPath": "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj"
+              },
               "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
                 "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj"
               }

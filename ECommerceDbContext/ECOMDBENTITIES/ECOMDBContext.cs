@@ -316,11 +316,14 @@ namespace ECommerceDbContext.ECOMDBENTITIES
 
             modelBuilder.Entity<CourierAgreementMaster>(entity =>
             {
-                entity.HasNoKey();
+                entity.HasKey(c=>c.AgreementId);
 
                 entity.ToTable("courierAgreementMaster");
 
-                entity.Property(e => e.AgreementId).HasColumnName("AGREEMENT_ID");
+                entity.Property(e => e.AgreementId)
+                
+                    .HasColumnName("AGREEMENT_ID")
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Amount)
                     .HasColumnName("AMOUNT")

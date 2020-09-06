@@ -95,5 +95,10 @@ namespace CommonUnitOfWork
 
         private IGetCourierCompnayListRepository _getCourierCompnayListRepository;
         public IGetCourierCompnayListRepository GetCourierCompanyList => _getCourierCompnayListRepository ?? new GetCourierCompnayListRepository();
+        private IOrderDetailsTempRepository _orderDetailsTempRepository;
+        public IOrderDetailsTempRepository PostOrderDetailSTemp => _orderDetailsTempRepository ?? new OrderDetailsTempRepository();
+
+        private IPostCourierAgreementRepository _postCourierAgreementRepository;
+        public IPostCourierAgreementRepository CourierAgreement => _postCourierAgreementRepository ?? new PostCourierAgreementRepository(_context);
     }
 }

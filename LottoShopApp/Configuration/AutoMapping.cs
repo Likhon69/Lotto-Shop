@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-
+using ECommerceDbContext.ECOMDBENTITIES;
 using ShopModels.Models;
 using ShopModels.ViewModel;
 using System;
@@ -23,10 +23,12 @@ namespace E_CommerceApp.Configuration
             CreateMap<CourierDetailsVm, CourierCompanyMaster>();
             CreateMap<CourierContactPerson, ContactPersonVm>();
             CreateMap<ContactPersonVm, CourierContactPerson>();
-           /* CreateMap<CourierCompanyMasters, CourierDetailsVm>();
-            CreateMap<CourierDetailsVm, CourierCompanyMasters>();
-            CreateMap<CourierContactPersons, ContactPersonVm>();
-            CreateMap<ContactPersonVm, CourierContactPersons>();*/
+            /* CreateMap<CourierCompanyMasters, CourierDetailsVm>();
+             CreateMap<CourierDetailsVm, CourierCompanyMasters>();
+             CreateMap<CourierContactPersons, ContactPersonVm>();
+             CreateMap<ContactPersonVm, CourierContactPersons>();*/
+            CreateMap<CourierAgreementMaster, CourierAgreementVm>();
+            CreateMap<CourierAgreementVm, CourierAgreementMaster>();
         }
     }
 }

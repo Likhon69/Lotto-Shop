@@ -19,6 +19,8 @@ namespace CommonUnitOfWork
         IGetDistrictAreaByDistrictIdRepository GetDistrictArea { get; }
         ICourierMasterPostRepository PostCourierMaster { get; }
         IGetCourierCompnayListRepository GetCourierCompanyList { get; }
+        IOrderDetailsTempRepository PostOrderDetailSTemp { get; }
+        IPostCourierAgreementRepository CourierAgreement { get; }
         int Commit();
     }
 }

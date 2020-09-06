@@ -11,3 +11,5 @@ E:\Project\LottoShop\CommonUnitOfWork\obj\Release\netcoreapp3.1\CommonUnitOfWork
 E:\Project\LottoShop\CommonUnitOfWork\obj\Release\netcoreapp3.1\CommonUnitOfWork.csproj.CopyComplete
 E:\Project\LottoShop\CommonUnitOfWork\obj\Release\netcoreapp3.1\CommonUnitOfWork.dll
 E:\Project\LottoShop\CommonUnitOfWork\obj\Release\netcoreapp3.1\CommonUnitOfWork.pdb
+E:\Project\LottoShop\CommonUnitOfWork\bin\Release\netcoreapp3.1\ECommerceDbContext.dll
+E:\Project\LottoShop\CommonUnitOfWork\bin\Release\netcoreapp3.1\ECommerceDbContext.pdb

@@ -5,3 +5,4 @@ E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.AssemblyInf
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.AssemblyInfo.cs
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.dll
 E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.pdb
+E:\Project\LottoShop\ShopModels\obj\Release\netcoreapp3.1\ShopModels.csprojAssemblyReference.cache

@@ -25,21 +25,25 @@ namespace E_CommerceApp.Controllers
         private IArticleDetailsPostService _services;
         private IPostArticleImageManager _postArticleImageManager;
         private ICourierMasterPostManager _courierMasterPostManager;
+        private IOrderDetailsTempManager _orderDetailsTempManager;
         private readonly IMapper _mapper;
+        private readonly IPostCourierAgreementManager _postCourierAgreementManager;
 
         public ArticleSettingsController(ECOMDBContext db, 
             IArticleDetailsPostService services, 
             IPostArticleImageManager postArticleImageManager, 
             ICourierMasterPostManager courierMasterPostManager,
-           
-            IMapper mapper)
+           IOrderDetailsTempManager orderDetailsTempManager,
+            IMapper mapper,
+            IPostCourierAgreementManager postCourierAgreementManager)
         {
             _db = db;
             _services = services;
             _postArticleImageManager = postArticleImageManager;
             _courierMasterPostManager = courierMasterPostManager;
-           
-            _mapper = mapper;
+            _orderDetailsTempManager = orderDetailsTempManager;
+             _mapper = mapper;
+            _postCourierAgreementManager = postCourierAgreementManager;
         }
        /* [HttpGet]
         public IActionResult GetCategorys()
@@ -119,6 +123,21 @@ namespace E_CommerceApp.Controllers
             var res = _courierMasterPostManager.CourierMasterPost(model);
             return Ok(res);
 
+        }
+
+        [HttpPost]
+        public IActionResult PostAgreement(CourierAgreementVm model)
+        {
+            var res = _postCourierAgreementManager.PostCourierAgreement(model);
+            return Ok(res);
+        }
+
+        [HttpPost]
+        public IActionResult PostOrderDetails(OrderDetailsTmpVm model)
+        {
+            var res = _orderDetailsTempManager.PostOrderDetailsTmp(model);
+
+            return Ok(res);
         }
     }
 }
