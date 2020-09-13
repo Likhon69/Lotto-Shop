@@ -99,6 +99,10 @@ namespace E_CommerceApp
             services.AddTransient<IOrderDetailsTempRepository, OrderDetailsTempRepository>();
             services.AddTransient<IPostCourierAgreementManager, PostCourierAgreementManager>();
             services.AddTransient<IPostCourierAgreementRepository, PostCourierAgreementRepository>();
+            services.AddTransient<IOrderCreateManager, OrderCreateManager>();
+            services.AddTransient<IOrderCreateRepository, OrderCreateRepository>();
+            services.AddTransient<IAddressDetailsPostRepository, AddressDetailsPostRepository>();
+            services.AddTransient<IAddressDetailsPostManager, AddressDetailsPostManager>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

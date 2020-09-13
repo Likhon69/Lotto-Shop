@@ -100,5 +100,11 @@ namespace CommonUnitOfWork
 
         private IPostCourierAgreementRepository _postCourierAgreementRepository;
         public IPostCourierAgreementRepository CourierAgreement => _postCourierAgreementRepository ?? new PostCourierAgreementRepository(_context);
+
+        private IOrderCreateRepository _orderCreateRepository;
+        public IOrderCreateRepository OrderCreate => _orderCreateRepository?? new OrderCreateRepository();
+
+        private IAddressDetailsPostRepository _addressDetailsPostRepository;
+        public IAddressDetailsPostRepository PostAddress => _addressDetailsPostRepository??new AddressDetailsPostRepository();
     }
 }

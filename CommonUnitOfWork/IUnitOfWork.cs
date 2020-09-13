@@ -21,6 +21,8 @@ namespace CommonUnitOfWork
         IGetCourierCompnayListRepository GetCourierCompanyList { get; }
         IOrderDetailsTempRepository PostOrderDetailSTemp { get; }
         IPostCourierAgreementRepository CourierAgreement { get; }
+        IOrderCreateRepository OrderCreate { get; }
+        IAddressDetailsPostRepository PostAddress { get; }
         int Commit();
     }
 }
