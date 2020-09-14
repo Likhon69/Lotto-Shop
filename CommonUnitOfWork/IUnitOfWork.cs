@@ -23,6 +23,8 @@ namespace CommonUnitOfWork
         IPostCourierAgreementRepository CourierAgreement { get; }
         IOrderCreateRepository OrderCreate { get; }
         IAddressDetailsPostRepository PostAddress { get; }
+        IOrderHeaderDetailsRepository GetOrderHeader { get; }
+        IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo { get; }
         int Commit();
     }
 }

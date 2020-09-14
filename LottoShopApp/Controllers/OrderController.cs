@@ -16,15 +16,35 @@ namespace E_CommerceApp.Controllers
     public class OrderController : ControllerBase
     {
         private readonly IOrderCreateManager _orderCreateManager;
-        public OrderController(IOrderCreateManager orderCreateManager)
+        private readonly IOrderHeaderDetailsManager _orderHeaderDetailsManager;
+        private readonly IOrderDetailsByOrderNoManager _orderDetailsByOrderNoManager;
+        public OrderController(IOrderCreateManager orderCreateManager, 
+            IOrderHeaderDetailsManager orderHeaderDetailsManager,
+           IOrderDetailsByOrderNoManager orderDetailsByOrderNoManager)
         {
             _orderCreateManager = orderCreateManager;
+            _orderHeaderDetailsManager = orderHeaderDetailsManager;
+            _orderDetailsByOrderNoManager = orderDetailsByOrderNoManager;
         }
 
         [HttpPost]
-        public IActionResult TestData(CreateOrderVm data)
+        public IActionResult OrderCreate(CreateOrderVm data)
         {
             var res = _orderCreateManager.PostOrderCreate(data);
+            return Ok(res);
+        }
+
+        [HttpGet]
+        public IActionResult GetOrderHeaderDetails()
+        {
+            var res = _orderHeaderDetailsManager.GetOrderHeaderDetails();
+            return Ok(res);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetOrderDetailsByOrderNo(string id)
+        {
+            var res = _orderDetailsByOrderNoManager.GetOrderDetailsByOrderNo(id);
             return Ok(res);
         }
     }

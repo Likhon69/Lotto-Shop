@@ -106,5 +106,11 @@ namespace CommonUnitOfWork
 
         private IAddressDetailsPostRepository _addressDetailsPostRepository;
         public IAddressDetailsPostRepository PostAddress => _addressDetailsPostRepository??new AddressDetailsPostRepository();
+
+        private IOrderHeaderDetailsRepository _orderHeaderDetailsRepository;
+        public IOrderHeaderDetailsRepository GetOrderHeader => _orderHeaderDetailsRepository ?? new OrderHeaderDetailsRepository();
+
+        private IOrderDetailsByOrderNoRepository _orderDetailsByOrderNoRepository;
+        public IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo => _orderDetailsByOrderNoRepository ?? new OrderDetailsByOrderNoRepository();
     }
 }
