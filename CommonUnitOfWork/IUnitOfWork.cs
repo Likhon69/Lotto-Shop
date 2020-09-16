@@ -25,6 +25,7 @@ namespace CommonUnitOfWork
         IAddressDetailsPostRepository PostAddress { get; }
         IOrderHeaderDetailsRepository GetOrderHeader { get; }
         IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo { get; }
+        IOrderPickerRepository GetOrderPickerByOrderNo { get; }
         int Commit();
     }
 }

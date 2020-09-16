@@ -8,16 +8,16 @@ using System.Text;
 
 namespace Repository.Implementation
 {
-    public class OrderDetailsByOrderNoRepository : IOrderDetailsByOrderNoRepository
+    public class OrderPickerRepository : IOrderPickerRepository
     {
-        public List<OrderDetailsByOrderNoVm> GetOrderDetailsByOrderNo(string orderNo)
+        public List<OrderPickerVm> GetOrderPickerByOrderNo(string orderNo)
         {
             string connection = Constants.Connection;
             using (SqlConnection sqlConn = new SqlConnection(connection))
             {
                 sqlConn.Open();
-                List<OrderDetailsByOrderNoVm> dt = new List<OrderDetailsByOrderNoVm>();
-                using (SqlCommand sqlComm = new SqlCommand("USP_LIST_ORDER_DETAILS", sqlConn))
+                List<OrderPickerVm> dt = new List<OrderPickerVm>();
+                using (SqlCommand sqlComm = new SqlCommand("USP_LIST_ORDER_SUMMARY", sqlConn))
                 {
 
                     sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
@@ -29,12 +29,13 @@ namespace Repository.Implementation
                         {
                             try
                             {
-                                OrderDetailsByOrderNoVm dtc = new OrderDetailsByOrderNoVm();
+                                OrderPickerVm dtc = new OrderPickerVm();
 
                                 dtc.Order_No = sdr["Order_No"].ToString();
                                 dtc.Ref_ID = sdr["Ref_ID"].ToString();
                                 dtc.Customer_ID = (long)sdr["Customer_ID"];
-                                dtc.Quantity = (int)sdr["Quantity"];
+                                dtc.Order_Date = (DateTime)sdr["Order_Date"];
+                                dtc.ValidTo_Date = (DateTime)sdr["ValidTo_Date"];
                                 dtc.Shipment_To = sdr["Shipment_To"].ToString();
                                 dtc.Shipment_Mobile_No = sdr["Shipment_Mobile_No"].ToString();
                                 dtc.Shipment_Address = sdr["Shipment_Address"].ToString();
@@ -47,19 +48,14 @@ namespace Repository.Implementation
                                 dtc.Billing_District = sdr["Billing_District"].ToString();
                                 dtc.Total_Quantity = (int)sdr["Total_Quantity"];
                                 dtc.Gross_Amount = (decimal)sdr["Gross_Amount"];
-                              
+                                dtc.Discount_Amount = (decimal)sdr["Discount_Amount"];
                                 dtc.Net_Amount = (decimal)sdr["Net_Amount"];
                                 dtc.Courier_Charge = (decimal)sdr["Courier_Charge"];
-                                dtc.ARTICLE = sdr["ARTICLE"].ToString();
+                                dtc.Payment_Through = sdr["Payment_Through"].ToString();
                                 dtc.Balance_Amount = (decimal)sdr["Balance_Amount"];
-                                dtc.SIZE = sdr["SIZE"].ToString();
-                                dtc.IMAGE_NAME = sdr["IMAGE_NAME"].ToString();
-                                dtc.Invocie_Gross_Amount = (decimal)sdr["Gross_Amount"];
-                                //dtc.Invocie_Disc_Amount = (decimal)sdr["Discount_Amount"];
-                                dtc.Invoice_Net_Amount = (decimal)sdr["Net_Amount"];
+
                                 dtc.Total_payable_Amount = (decimal)sdr["Total_payable_Amount"];
                                 dtc.Paid_Amount = (decimal)sdr["Paid_Amount"];
-                                dtc.Vat_Amount = (decimal)sdr["Vat_Amount"];
 
 
                                 dt.Add(dtc);

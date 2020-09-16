@@ -18,13 +18,16 @@ namespace E_CommerceApp.Controllers
         private readonly IOrderCreateManager _orderCreateManager;
         private readonly IOrderHeaderDetailsManager _orderHeaderDetailsManager;
         private readonly IOrderDetailsByOrderNoManager _orderDetailsByOrderNoManager;
+        private readonly IOrderPickerManager _orderPickerManager;
         public OrderController(IOrderCreateManager orderCreateManager, 
             IOrderHeaderDetailsManager orderHeaderDetailsManager,
-           IOrderDetailsByOrderNoManager orderDetailsByOrderNoManager)
+           IOrderDetailsByOrderNoManager orderDetailsByOrderNoManager,
+           IOrderPickerManager orderPickerManager)
         {
             _orderCreateManager = orderCreateManager;
             _orderHeaderDetailsManager = orderHeaderDetailsManager;
             _orderDetailsByOrderNoManager = orderDetailsByOrderNoManager;
+            _orderPickerManager = orderPickerManager;
         }
 
         [HttpPost]
@@ -44,8 +47,26 @@ namespace E_CommerceApp.Controllers
         [HttpGet("{id}")]
         public IActionResult GetOrderDetailsByOrderNo(string id)
         {
+            var td = "dsfddd";
             var res = _orderDetailsByOrderNoManager.GetOrderDetailsByOrderNo(id);
             return Ok(res);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetOrderPickerByOrderNo(string id)
+        {
+
+            if (id != null)
+            {
+                var res = _orderPickerManager.GetOrderPickerByOrderNo(id);
+
+                return Ok(res);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

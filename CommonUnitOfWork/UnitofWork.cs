@@ -112,5 +112,7 @@ namespace CommonUnitOfWork
 
         private IOrderDetailsByOrderNoRepository _orderDetailsByOrderNoRepository;
         public IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo => _orderDetailsByOrderNoRepository ?? new OrderDetailsByOrderNoRepository();
+        private IOrderPickerRepository _orderPickerRepository;
+        public IOrderPickerRepository GetOrderPickerByOrderNo => _orderPickerRepository ?? new OrderPickerRepository();
     }
 }

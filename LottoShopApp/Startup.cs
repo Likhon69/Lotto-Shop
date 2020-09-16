@@ -107,6 +107,8 @@ namespace E_CommerceApp
             services.AddTransient<IOrderHeaderDetailsRepository, OrderHeaderDetailsRepository>();
             services.AddTransient<IOrderDetailsByOrderNoRepository, OrderDetailsByOrderNoRepository>();
             services.AddTransient<IOrderDetailsByOrderNoManager, OrderDetailsByOrderNoManager>();
+            services.AddTransient<IOrderPickerManager, OrderPickerManager>();
+            services.AddTransient<IOrderPickerRepository, OrderPickerRepository>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));
