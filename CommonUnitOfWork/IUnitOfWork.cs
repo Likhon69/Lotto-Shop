@@ -26,6 +26,7 @@ namespace CommonUnitOfWork
         IOrderHeaderDetailsRepository GetOrderHeader { get; }
         IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo { get; }
         IOrderPickerRepository GetOrderPickerByOrderNo { get; }
+        IOrderProcessRepository OrderProcess { get; }
         int Commit();
     }
 }

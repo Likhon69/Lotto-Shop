@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using ECommerceDbContext.ECOMDBENTITIES;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,15 +21,21 @@ namespace E_CommerceApp.Controllers
         private readonly IOrderHeaderDetailsManager _orderHeaderDetailsManager;
         private readonly IOrderDetailsByOrderNoManager _orderDetailsByOrderNoManager;
         private readonly IOrderPickerManager _orderPickerManager;
-        public OrderController(IOrderCreateManager orderCreateManager, 
+        private readonly IOrderProcessManager _orderProcessManager;
+        private readonly ECOMDBContext _db;
+        public OrderController(IOrderCreateManager orderCreateManager,
             IOrderHeaderDetailsManager orderHeaderDetailsManager,
            IOrderDetailsByOrderNoManager orderDetailsByOrderNoManager,
-           IOrderPickerManager orderPickerManager)
+           IOrderPickerManager orderPickerManager,
+           IOrderProcessManager orderProcessManager,
+           ECOMDBContext db)
         {
             _orderCreateManager = orderCreateManager;
             _orderHeaderDetailsManager = orderHeaderDetailsManager;
             _orderDetailsByOrderNoManager = orderDetailsByOrderNoManager;
             _orderPickerManager = orderPickerManager;
+            _orderProcessManager = orderProcessManager;
+            _db = db;
         }
 
         [HttpPost]
@@ -66,6 +74,29 @@ namespace E_CommerceApp.Controllers
             {
                 return BadRequest();
             }
+        }
+
+        [HttpPost("{id}")]
+        public IActionResult OrderProcess(string id)
+       {
+
+            var created_By = "";
+            if (User.Identity.IsAuthenticated)
+            {
+                
+                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name).Value;
+
+
+                var user = _db.Users.FirstOrDefault(c => c.UserName == userId);
+
+                
+                      created_By = user.LoginId;
+                    
+                
+
+            }
+            var res = _orderProcessManager.OrderProcess(id, created_By);
+            return Ok(res);
         }
 
     }

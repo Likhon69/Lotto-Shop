@@ -114,5 +114,7 @@ namespace CommonUnitOfWork
         public IOrderDetailsByOrderNoRepository GetOrderDetailsByOrderNo => _orderDetailsByOrderNoRepository ?? new OrderDetailsByOrderNoRepository();
         private IOrderPickerRepository _orderPickerRepository;
         public IOrderPickerRepository GetOrderPickerByOrderNo => _orderPickerRepository ?? new OrderPickerRepository();
+        private IOrderProcessRepository _orderProcessRepository;
+        public IOrderProcessRepository OrderProcess => _orderProcessRepository?? new OrderProcessRepository();
     }
 }
