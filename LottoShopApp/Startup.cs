@@ -111,6 +111,13 @@ namespace E_CommerceApp
             services.AddTransient<IOrderPickerRepository, OrderPickerRepository>();
             services.AddTransient<IOrderProcessManager, OrderProcessManager>();
             services.AddTransient<IOrderProcessRepository, OrderProcessRepository>();
+            services.AddTransient<IGetCategoryListRepository, GetCategoryListRepository>();
+            
+            services.AddTransient<IGetCategoryListManager, GetCategoryListManager>();
+            services.AddTransient<IGetSubCategoryLIstRepository, GetSubCategoryLIstRepository>();
+            services.AddTransient<IGetSubCategoryLIstManager, GetSubCategoryLIstManager>();
+            services.AddTransient<IGetSubSubCategoryManager, GetSubSubCategoryLIstManager>();
+            services.AddTransient<IGetSubSubCategoryRepository, GetSubSubCategoryRepository>();
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

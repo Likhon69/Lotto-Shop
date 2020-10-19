@@ -18,30 +18,40 @@ namespace E_CommerceApp.Controllers
     [EnableCors("CorsPolicy")]
     public class ArticleGetController : ControllerBase
     {
-      
+
         private readonly IGetProcedure _getProcedure;
         private readonly IGetAllArticleDetailsManager _getAllArticleDetailsManager;
         private readonly IGetDistrictMasterManager _getDistrictMasterManager;
         private readonly IGetDistrictAreaByDistrictIdManager _getDistrictAreaByDistrictIdManager;
-       
+        private readonly IGetCategoryListManager _getCategoryListManager;
+        private readonly IGetSubCategoryLIstManager _getSubCategoryLIstManager;
+        private readonly IGetSubSubCategoryManager _getSubSubCategoryManager;
+
         private readonly IGetCourierCompanyListManager _getCourierCompanyListManager;
         public ArticleGetController(
-            IGetProcedure getProcedure, 
-            IGetAllArticleDetailsManager getAllArticleDetailsManager, 
-            IGetDistrictMasterManager getDistrictMasterManager, 
+            IGetProcedure getProcedure,
+            IGetAllArticleDetailsManager getAllArticleDetailsManager,
+            IGetDistrictMasterManager getDistrictMasterManager,
             IGetDistrictAreaByDistrictIdManager getDistrictAreaByDistrictIdManager,
-             IGetCourierCompanyListManager getCourierCompanyListManager)
+             IGetCourierCompanyListManager getCourierCompanyListManager,
+             IGetCategoryListManager getCategoryListManager,
+            IGetSubCategoryLIstManager getSubCategoryLIstManager,
+            IGetSubSubCategoryManager getSubSubCategoryManager
+            )
         {
-           
+
             _getProcedure = getProcedure;
             _getAllArticleDetailsManager = getAllArticleDetailsManager;
             _getDistrictMasterManager = getDistrictMasterManager;
             _getDistrictAreaByDistrictIdManager = getDistrictAreaByDistrictIdManager;
             _getCourierCompanyListManager = getCourierCompanyListManager;
+            _getCategoryListManager = getCategoryListManager;
+            _getSubCategoryLIstManager = getSubCategoryLIstManager;
+            _getSubSubCategoryManager = getSubSubCategoryManager;
         }
 
-        
-                      
+
+
 
         [HttpGet]
         public IActionResult GetProcedureData()
@@ -73,6 +83,27 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetCourierDetailsList()
         {
             var result = _getCourierCompanyListManager.GetCourierCompanyList();
+            return Ok(result);
+        }
+
+        [HttpGet]
+
+        public IActionResult GetCategoryList()
+        {
+            var result = _getCategoryListManager.GetAllCategoryList();
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetSubCategoryList(int id)
+        {
+            var result = _getSubCategoryLIstManager.GetAllSubCategoryList(id);
+            return Ok(result);
+        }
+        [HttpGet("{id}")]
+        public IActionResult GetSubSubCategoryList(int id)
+        {
+            var result = _getSubSubCategoryManager.GetAllSubSubCategory(id);
             return Ok(result);
         }
     }

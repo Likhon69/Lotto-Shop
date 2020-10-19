@@ -116,5 +116,12 @@ namespace CommonUnitOfWork
         public IOrderPickerRepository GetOrderPickerByOrderNo => _orderPickerRepository ?? new OrderPickerRepository();
         private IOrderProcessRepository _orderProcessRepository;
         public IOrderProcessRepository OrderProcess => _orderProcessRepository?? new OrderProcessRepository();
+
+        private IGetCategoryListRepository _getCategoryListRepository;
+        public IGetCategoryListRepository CategoryList => _getCategoryListRepository ?? new GetCategoryListRepository();
+        private IGetSubCategoryLIstRepository _getSubCategoryLIstRepository;
+        public IGetSubCategoryLIstRepository SubCategoryList => _getSubCategoryLIstRepository?? new GetSubCategoryLIstRepository();
+        private IGetSubSubCategoryRepository _getSubSubCategoryRepository;
+        public IGetSubSubCategoryRepository SubSubCategoryList =>_getSubSubCategoryRepository?? new GetSubSubCategoryRepository();
     }
 }

@@ -22,7 +22,7 @@ namespace Repository.Implementation
                     {
                         sqlConn.Open();
                     }
-                    using (SqlCommand sqlComm = new SqlCommand("USP_INS_SALES_ORDER_ERP ", sqlConn))
+                    using (SqlCommand sqlComm = new SqlCommand("USP_INS_SALES_ORDER_ERP", sqlConn))
                     {
 
 
