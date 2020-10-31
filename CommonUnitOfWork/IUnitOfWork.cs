@@ -30,6 +30,11 @@ namespace CommonUnitOfWork
         IGetCategoryListRepository CategoryList { get; }
         IGetSubCategoryLIstRepository SubCategoryList { get; }
         IGetSubSubCategoryRepository SubSubCategoryList { get; }
+        IAddPracticePostRepository Practice { get; }
+        IGetDesignationRepository DesignationLIst { get; }
+        IGetPracticeRepository PracticeList { get; }
+        IGetPracticeEmployeeDetailsRepository PracticeEmployeeDetailsList { get; }
+        IDeletePracticeRepository DeletePracticeRepository { get; }
         int Commit();
     }
 }

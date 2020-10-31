@@ -123,5 +123,15 @@ namespace CommonUnitOfWork
         public IGetSubCategoryLIstRepository SubCategoryList => _getSubCategoryLIstRepository?? new GetSubCategoryLIstRepository();
         private IGetSubSubCategoryRepository _getSubSubCategoryRepository;
         public IGetSubSubCategoryRepository SubSubCategoryList =>_getSubSubCategoryRepository?? new GetSubSubCategoryRepository();
+        private IAddPracticePostRepository _addPracticePostRepository;
+        public IAddPracticePostRepository Practice => _addPracticePostRepository ?? new AddPracticePostRepository();
+        private IGetDesignationRepository _getDesignationRepository;
+        public IGetDesignationRepository DesignationLIst => _getDesignationRepository?? new GetEmployeeDetails();
+        private IGetPracticeRepository _getPracticeRepository;
+        public IGetPracticeRepository PracticeList => _getPracticeRepository?? new GetPracticeRepository();
+        private IGetPracticeEmployeeDetailsRepository _getPracticeEmployeeDetailsRepository;
+        public IGetPracticeEmployeeDetailsRepository PracticeEmployeeDetailsList => _getPracticeEmployeeDetailsRepository??  new GetPracticeEmployeeDetailsRepository();
+        private IDeletePracticeRepository _deletePracticeRepository;
+        public IDeletePracticeRepository DeletePracticeRepository => _deletePracticeRepository?? new DeletePracticeRepository();
     }
 }

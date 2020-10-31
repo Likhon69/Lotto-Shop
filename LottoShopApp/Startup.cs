@@ -112,12 +112,23 @@ namespace E_CommerceApp
             services.AddTransient<IOrderProcessManager, OrderProcessManager>();
             services.AddTransient<IOrderProcessRepository, OrderProcessRepository>();
             services.AddTransient<IGetCategoryListRepository, GetCategoryListRepository>();
-            
+            services.AddTransient<IAddPracticePostRepository, AddPracticePostRepository>();
+          services.AddTransient<IAddPracticePostManager, AddPracticePostManager>();
             services.AddTransient<IGetCategoryListManager, GetCategoryListManager>();
             services.AddTransient<IGetSubCategoryLIstRepository, GetSubCategoryLIstRepository>();
             services.AddTransient<IGetSubCategoryLIstManager, GetSubCategoryLIstManager>();
             services.AddTransient<IGetSubSubCategoryManager, GetSubSubCategoryLIstManager>();
             services.AddTransient<IGetSubSubCategoryRepository, GetSubSubCategoryRepository>();
+            services.AddTransient<IGetDesignationRepository, GetEmployeeDetails>();
+            services.AddTransient<IGetDesignationManager, GetDesignationManager>();
+            services.AddTransient<IGetPracticeRepository, GetPracticeRepository>();
+            services.AddTransient<IGetPracticeManager, GetPracticeManager>();
+            services.AddTransient<IGetPracticeEmployeeDetailsRepository,GetPracticeEmployeeDetailsRepository>();
+            services.AddTransient<IGetPracticeEmployeeDetailsManager,GetPracticeEmployeeDetailsManager>();
+            services.AddTransient<IDeletePracticeRepository, DeletePracticeRepository>();
+            services.AddTransient<IDeletePracticeManager, DeletePracticeManager>();
+
+
             services.AddAuthentication("Basic")
                 .AddScheme<BasicAuthenticationSchemeOptions, CustomauthenticationHandler>("Basic", null);
             services.AddAutoMapper(typeof(Startup));

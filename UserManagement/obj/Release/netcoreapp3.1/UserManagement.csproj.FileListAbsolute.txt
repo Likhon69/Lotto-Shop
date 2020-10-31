@@ -11,3 +11,16 @@ E:\Project\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.Ass
 E:\Project\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.csproj.CopyComplete
 E:\Project\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.dll
 E:\Project\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.pdb
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\UserManagement.deps.json
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\UserManagement.dll
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\UserManagement.pdb
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\ECommerceDbContext.dll
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\ShopModels.dll
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\ECommerceDbContext.pdb
+D:\LottoShop\UserManagement\bin\Release\netcoreapp3.1\ShopModels.pdb
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.csprojAssemblyReference.cache
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.AssemblyInfoInputs.cache
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.AssemblyInfo.cs
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.csproj.CopyComplete
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.dll
+D:\LottoShop\UserManagement\obj\Release\netcoreapp3.1\UserManagement.pdb

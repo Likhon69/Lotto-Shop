@@ -6,6 +6,7 @@ namespace ShopModels.Models
 {
     public class ArticleMatrix
     {
+        
         public int ArtM_Id { get; set; }
         public string Description { get; set; }
     }

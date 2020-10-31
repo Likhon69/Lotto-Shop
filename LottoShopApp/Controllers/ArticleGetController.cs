@@ -26,6 +26,11 @@ namespace E_CommerceApp.Controllers
         private readonly IGetCategoryListManager _getCategoryListManager;
         private readonly IGetSubCategoryLIstManager _getSubCategoryLIstManager;
         private readonly IGetSubSubCategoryManager _getSubSubCategoryManager;
+        private readonly IAddPracticePostManager _addPracticePostManager;
+        private readonly IGetDesignationManager _getDesignationManager;
+        private readonly IGetPracticeManager _getPracticeManager;
+        private readonly IGetPracticeEmployeeDetailsManager _getPracticeEmployeeDetailsManager;
+        private readonly IDeletePracticeManager _deletePracticeManager;
 
         private readonly IGetCourierCompanyListManager _getCourierCompanyListManager;
         public ArticleGetController(
@@ -36,7 +41,12 @@ namespace E_CommerceApp.Controllers
              IGetCourierCompanyListManager getCourierCompanyListManager,
              IGetCategoryListManager getCategoryListManager,
             IGetSubCategoryLIstManager getSubCategoryLIstManager,
-            IGetSubSubCategoryManager getSubSubCategoryManager
+            IGetSubSubCategoryManager getSubSubCategoryManager,
+            IAddPracticePostManager addPracticePostManager,
+            IGetDesignationManager getDesignationManager,
+            IGetPracticeManager getPracticeManager,
+            IGetPracticeEmployeeDetailsManager getPracticeEmployeeDetailsManager,
+            IDeletePracticeManager deletePracticeManager
             )
         {
 
@@ -48,6 +58,11 @@ namespace E_CommerceApp.Controllers
             _getCategoryListManager = getCategoryListManager;
             _getSubCategoryLIstManager = getSubCategoryLIstManager;
             _getSubSubCategoryManager = getSubSubCategoryManager;
+            _addPracticePostManager = addPracticePostManager;
+            _getDesignationManager = getDesignationManager;
+            _getPracticeManager = getPracticeManager;
+            _getPracticeEmployeeDetailsManager = getPracticeEmployeeDetailsManager;
+            _deletePracticeManager = deletePracticeManager;
         }
 
 
@@ -104,6 +119,49 @@ namespace E_CommerceApp.Controllers
         public IActionResult GetSubSubCategoryList(int id)
         {
             var result = _getSubSubCategoryManager.GetAllSubSubCategory(id);
+            return Ok(result);
+        }
+        [HttpPost]
+        public IActionResult PostPractice(PracticseVm practicseVm )
+        {
+            var res = "jhgdsjhdd";
+            return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult PostTest(EmployeeVm employee)
+        {
+            var res = _addPracticePostManager.PracticePost(employee);
+
+            return Ok(res);
+        }
+        [HttpGet]
+
+        public IActionResult GetDesignationList()
+        {
+            var result = _getDesignationManager.GetAllDesignationList();
+            return Ok(result);
+        }
+        [HttpGet]
+
+        public IActionResult GetPracticeList()
+        {
+            var result = _getPracticeManager.GetEmployeeDetails();
+            return Ok(result);
+        }
+        [HttpGet("{id}")]
+
+        public IActionResult GetPracticeEmployeeList(int id)
+        {
+            var result = _getPracticeEmployeeDetailsManager.GetEmployeePracticeDetails(id);
+            return Ok(result);
+        }
+
+        [HttpPost("{id}")]
+
+        public IActionResult DeletePractice(int id)
+        {
+            var result = _deletePracticeManager.DeletePracticeMaster(id);
             return Ok(result);
         }
     }

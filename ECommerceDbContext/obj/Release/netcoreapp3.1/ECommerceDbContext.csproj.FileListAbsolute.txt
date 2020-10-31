@@ -11,3 +11,16 @@ E:\Project\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbCon
 E:\Project\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.csproj.CopyComplete
 E:\Project\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.dll
 E:\Project\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.pdb
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ECommerceDbContext.deps.json
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ECommerceDbContext.runtimeconfig.json
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ECommerceDbContext.runtimeconfig.dev.json
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ECommerceDbContext.dll
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ECommerceDbContext.pdb
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ShopModels.dll
+D:\LottoShop\ECommerceDbContext\bin\Release\netcoreapp3.1\ShopModels.pdb
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.csprojAssemblyReference.cache
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.AssemblyInfoInputs.cache
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.AssemblyInfo.cs
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.csproj.CopyComplete
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.dll
+D:\LottoShop\ECommerceDbContext\obj\Release\netcoreapp3.1\ECommerceDbContext.pdb

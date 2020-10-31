@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Project\\LottoShop\\Services\\Services.csproj": {}
+    "D:\\LottoShop\\Services\\Services.csproj": {}
   },
   "projects": {
-    "E:\\Project\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj": {
+    "D:\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj",
+        "projectUniqueName": "D:\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj",
         "projectName": "CommonUnitOfWork",
-        "projectPath": "E:\\Project\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj",
+        "projectPath": "D:\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\LottoShop\\CommonUnitOfWork\\obj\\",
+        "outputPath": "D:\\LottoShop\\CommonUnitOfWork\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -32,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Project\\LottoShop\\Repository\\Repository.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\Repository\\Repository.csproj"
+              "D:\\LottoShop\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\LottoShop\\Repository\\Repository.csproj"
               }
             }
           }
@@ -67,27 +62,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
+    "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj",
+        "projectUniqueName": "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj",
         "projectName": "ECommerceDbContext",
-        "projectPath": "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj",
+        "projectPath": "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\LottoShop\\ECommerceDbContext\\obj\\",
+        "outputPath": "D:\\LottoShop\\ECommerceDbContext\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -99,8 +89,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj"
+              "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
+                "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj"
               }
             }
           }
@@ -154,27 +144,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\LottoShop\\Repository\\Repository.csproj": {
+    "D:\\LottoShop\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\LottoShop\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\LottoShop\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "E:\\Project\\LottoShop\\Repository\\Repository.csproj",
+        "projectPath": "D:\\LottoShop\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\LottoShop\\Repository\\obj\\",
+        "outputPath": "D:\\LottoShop\\Repository\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -186,11 +171,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj"
+              "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
+                "projectPath": "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj"
               },
-              "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj"
+              "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
+                "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj"
               }
             }
           }
@@ -228,27 +213,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\LottoShop\\Services\\Services.csproj": {
+    "D:\\LottoShop\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\LottoShop\\Services\\Services.csproj",
+        "projectUniqueName": "D:\\LottoShop\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "E:\\Project\\LottoShop\\Services\\Services.csproj",
+        "projectPath": "D:\\LottoShop\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\LottoShop\\Services\\obj\\",
+        "outputPath": "D:\\LottoShop\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -260,14 +240,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "E:\\Project\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj"
+              "D:\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj": {
+                "projectPath": "D:\\LottoShop\\CommonUnitOfWork\\CommonUnitOfWork.csproj"
               },
-              "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj"
+              "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj": {
+                "projectPath": "D:\\LottoShop\\ECommerceDbContext\\ECommerceDbContext.csproj"
               },
-              "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
-                "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj"
+              "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
+                "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj"
               }
             }
           }
@@ -301,27 +281,22 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj": {
+    "D:\\LottoShop\\ShopModels\\ShopModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
+        "projectUniqueName": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
         "projectName": "ShopModels",
-        "projectPath": "E:\\Project\\LottoShop\\ShopModels\\ShopModels.csproj",
+        "projectPath": "D:\\LottoShop\\ShopModels\\ShopModels.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "E:\\Project\\LottoShop\\ShopModels\\obj\\",
+        "outputPath": "D:\\LottoShop\\ShopModels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -358,7 +333,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
